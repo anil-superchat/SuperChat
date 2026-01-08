@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SuperChat | Get in Touch</title>
+    <meta name="description" content="Contact SuperChat for demos, sales inquiries, support, or partnership opportunities. We're here to help with your enterprise AI needs.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="./superchat_logo_4.png" alt="SuperChat" class="logo">
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">AI Models</a></li>
+                <li><a href="workflows.html">Workflows</a></li>
+                <li><a href="technology.html">Technology</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active btn-nav">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-small">
+        <div class="container">
+            <div class="hero-content-center">
+                <span class="hero-badge">💬 Get in Touch</span>
+                <h1>Let's Talk About<br><span class="gradient-text">Your AI Strategy</span></h1>
+                <p class="hero-description">
+                    Whether you're ready for a demo, have questions, or want to discuss 
+                    a custom deployment, our team is here to help.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2>Send Us a Message</h2>
+                    <p class="form-intro">Fill out the form below and we'll get back to you within 24 hours.</p>
+
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title</label>
+                            <input type="text" id="jobTitle" name="jobTitle">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="industry">Industry</label>
+                                <select id="industry" name="industry">
+                                    <option value="">Select an industry</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="finance">Finance & Banking</option>
+                                    <option value="government">Government</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="retail">Retail & E-commerce</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="education">Education</option>
+                                    <option value="legal">Legal</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="companySize">Company Size</label>
+                                <select id="companySize" name="companySize">
+                                    <option value="">Select size</option>
+                                    <option value="1-50">1-50 employees</option>
+                                    <option value="51-200">51-200 employees</option>
+                                    <option value="201-1000">201-1,000 employees</option>
+                                    <option value="1001-5000">1,001-5,000 employees</option>
+                                    <option value="5001+">5,001+ employees</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inquiryType">Type of Inquiry *</label>
+                            <select id="inquiryType" name="inquiryType" required>
+                                <option value="">Select inquiry type</option>
+                                <option value="demo">Request a Demo</option>
+                                <option value="sales">Sales Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="pricing">Pricing Information</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project or inquiry..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span>Send me product updates and news</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span>I agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> *</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large btn-full">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+
+                        <div id="formMessage" class="form-message" style="display: none;"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-wrapper">
+                    <div class="contact-info-card">
+                        <h3>Contact Information</h3>
+                        <p>Reach out through any of these channels</p>
+
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="method-details">
+                                    <h4>Email</h4>
+                                    <a href="mailto:hello@superchat.ai">hello@superchat.ai</a>
+                                    <p class="method-note">General inquiries</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon"><i class="fas fa-headset"></i></div>
+                                <div class="method-details">
+                                    <h4>Support</h4>
+                                    <a href="mailto:support@superchat.ai">support@superchat.ai</a>
+                                    <p class="method-note">Technical assistance</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon"><i class="fas fa-briefcase"></i></div>
+                                <div class="method-details">
+                                    <h4>Sales</h4>
+                                    <a href="mailto:sales@superchat.ai">sales@superchat.ai</a>
+                                    <p class="method-note">Enterprise inquiries</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon"><i class="fas fa-phone"></i></div>
+                                <div class="method-details">
+                                    <h4>Phone</h4>
+                                    <a href="tel:+1-888-555-CHAT">+1 (888) 555-CHAT</a>
+                                    <p class="method-note">Mon-Fri, 9am-6pm EST</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="office-hours">
+                            <h4><i class="fas fa-clock"></i> Office Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                            <p>Saturday: 10:00 AM - 2:00 PM EST</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+
+                        <div class="social-links">
+                            <h4>Follow Us</h4>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <h3>Office Locations</h3>
+
+                        <div class="office-location">
+                            <h4><i class="fas fa-map-marker-alt"></i> Headquarters</h4>
+                            <p>
+                                123 AI Innovation Drive<br>
+                                Suite 500<br>
+                                San Francisco, CA 94105<br>
+                                United States
+                            </p>
+                        </div>
+
+                        <div class="office-location">
+                            <h4><i class="fas fa-map-marker-alt"></i> European Office</h4>
+                            <p>
+                                45 Tech Hub Lane<br>
+                                Level 3<br>
+                                London EC2A 4NE<br>
+                                United Kingdom
+                            </p>
+                        </div>
+
+                        <div class="office-location">
+                            <h4><i class="fas fa-map-marker-alt"></i> Asia-Pacific Office</h4>
+                            <p>
+                                88 Innovation Boulevard<br>
+                                Tower B, 12th Floor<br>
+                                Singapore 018956<br>
+                                Singapore
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">FAQ</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h4>How quickly can we get started?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most customers can start testing SuperChat within 24-48 hours. For browser-based deployment, it's immediate. For on-premise installations, timeline depends on your infrastructure, but typically 1-2 weeks including training.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h4>What deployment options are available?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer browser-based (WebGPU), on-premise (your infrastructure), private cloud (AWS/Azure/GCP), and hybrid deployment models. Our team will help you choose the best option for your requirements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h4>Do you offer technical support?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! All enterprise customers receive dedicated technical support, including onboarding, training, and ongoing assistance. We offer email, phone, and Slack channel support based on your plan.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h4>Is there a free trial available?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer a 14-day free trial for the browser-based version with access to all models except GOD MODE. For enterprise trials with full features, contact our sales team.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h4>What about data security and privacy?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SuperChat is designed with privacy first. On-premise deployments ensure zero external data transfer. We're GDPR, HIPAA, and SOC 2 compliant. Your data never leaves your infrastructure.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h4>Can I integrate with our existing systems?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! SuperChat includes 55+ workflow nodes for integrations including databases, cloud storage, email, APIs, and more. We also offer custom integration development for enterprise customers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (Placeholder) -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Find Us</span>
+                <h2>Our Headquarters</h2>
+            </div>
+            <div class="map-placeholder">
+                <i class="fas fa-map-marked-alt"></i>
+                <p>Map: 123 AI Innovation Drive, San Francisco, CA 94105</p>
+                <a href="https://maps.google.com" target="_blank" class="btn btn-secondary">Open in Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your AI Capabilities?</h2>
+                <p>Schedule a personalized demo and see SuperChat in action.</p>
+                <div class="cta-buttons">
+                    <a href="#contactForm" class="btn btn-primary btn-large">Request Demo</a>
+                    <a href="index.html" class="btn btn-secondary btn-large">Explore Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="./superchat_logo_4.png" alt="SuperChat" class="footer-logo">
+                    <p class="footer-tagline">Enterprise AI Solutions</p>
+                    <p>Powerful on-premise AI models for businesses that value privacy and control.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html">AI Models</a></li>
+                        <li><a href="workflows.html">Workflows</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="contact.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#team">Leadership</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SuperChat LLC. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

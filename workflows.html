@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Builder - SuperChat | 55+ Automation Nodes</title>
+    <meta name="description" content="Build powerful automation workflows with 55+ nodes across 12 categories. Visual workflow builder for enterprise AI automation.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="./superchat_logo_4.png" alt="SuperChat" class="logo">
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">AI Models</a></li>
+                <li><a href="workflows.html" class="active">Workflows</a></li>
+                <li><a href="technology.html">Technology</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-small">
+        <div class="container">
+            <div class="hero-content-center">
+                <span class="hero-badge">🔧 Workflow Automation</span>
+                <h1>Build Powerful Workflows<br>with <span class="gradient-text">55+ Nodes</span></h1>
+                <p class="hero-description">
+                    Visual workflow builder with drag-and-drop nodes. Create complex automation 
+                    pipelines without writing code. Connect AI models, APIs, databases, and more.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Overview -->
+    <section class="workflow-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <i class="fas fa-cubes"></i>
+                    <h3>55+ Nodes</h3>
+                    <p>Comprehensive node library across 12 categories</p>
+                </div>
+                <div class="overview-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Visual Builder</h3>
+                    <p>Drag-and-drop interface, no coding required</p>
+                </div>
+                <div class="overview-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Real-Time Execution</h3>
+                    <p>Execute workflows instantly or schedule them</p>
+                </div>
+                <div class="overview-card">
+                    <i class="fas fa-link"></i>
+                    <h3>Smart Connections</h3>
+                    <p>Connect nodes with visual port-based linking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Workflow Example -->
+    <section class="workflow-visual">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Example</span>
+                <h2>How Workflows Work</h2>
+                <p>Visual representation of a typical automation workflow</p>
+            </div>
+
+            <div class="workflow-diagram">
+                <div class="workflow-row">
+                    <div class="workflow-node input-node">
+                        <div class="node-icon"><i class="fas fa-file-alt"></i></div>
+                        <div class="node-title">File Input</div>
+                        <div class="node-desc">Upload document</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-node process-node">
+                        <div class="node-icon"><i class="fas fa-file-pdf"></i></div>
+                        <div class="node-title">PDF Processor</div>
+                        <div class="node-desc">Extract text</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-node ai-node">
+                        <div class="node-icon"><i class="fas fa-brain"></i></div>
+                        <div class="node-title">AI Model 3B</div>
+                        <div class="node-desc">Analyze content</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-node output-node">
+                        <div class="node-icon"><i class="fas fa-chart-bar"></i></div>
+                        <div class="node-title">Display</div>
+                        <div class="node-desc">Show results</div>
+                    </div>
+                </div>
+
+                <div class="workflow-row">
+                    <div class="workflow-node input-node">
+                        <div class="node-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="node-title">Gmail Read</div>
+                        <div class="node-desc">Fetch emails</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-node process-node">
+                        <div class="node-icon"><i class="fas fa-filter"></i></div>
+                        <div class="node-title">Data Filter</div>
+                        <div class="node-desc">Filter by criteria</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-node ai-node">
+                        <div class="node-icon"><i class="fas fa-robot"></i></div>
+                        <div class="node-title">AI Model 1B</div>
+                        <div class="node-desc">Classify urgency</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-node notify-node">
+                        <div class="node-icon"><i class="fab fa-slack"></i></div>
+                        <div class="node-title">Slack Notify</div>
+                        <div class="node-desc">Alert team</div>
+                    </div>
+                </div>
+
+                <div class="workflow-row">
+                    <div class="workflow-node input-node">
+                        <div class="node-icon"><i class="fas fa-clock"></i></div>
+                        <div class="node-title">Schedule</div>
+                        <div class="node-desc">Daily at 9 AM</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-node cloud-node">
+                        <div class="node-icon"><i class="fab fa-google-drive"></i></div>
+                        <div class="node-title">GDrive Read</div>
+                        <div class="node-desc">Fetch reports</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-node process-node">
+                        <div class="node-icon"><i class="fas fa-table"></i></div>
+                        <div class="node-title">Excel Processor</div>
+                        <div class="node-desc">Parse data</div>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-node db-node">
+                        <div class="node-icon"><i class="fas fa-database"></i></div>
+                        <div class="node-title">DB Insert</div>
+                        <div class="node-desc">Store data</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workflow-caption">
+                <p><strong>Three Real-World Examples:</strong> Document analysis pipeline, email automation with AI classification, scheduled data sync from cloud storage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Node Categories -->
+    <section class="node-categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Node Library</span>
+                <h2>55+ Nodes Across 12 Categories</h2>
+                <p>Complete toolkit for building any automation workflow</p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="category-tabs" id="categoryTabs">
+                <button class="tab-btn active" data-category="input">INPUT (5)</button>
+                <button class="tab-btn" data-category="cloud">CLOUD (7)</button>
+                <button class="tab-btn" data-category="email">EMAIL (4)</button>
+                <button class="tab-btn" data-category="social">SOCIAL (5)</button>
+                <button class="tab-btn" data-category="web">WEB (3)</button>
+                <button class="tab-btn" data-category="process">PROCESS (11)</button>
+                <button class="tab-btn" data-category="ai">AI MODELS (3)</button>
+                <button class="tab-btn" data-category="translate">TRANSLATE (3)</button>
+                <button class="tab-btn" data-category="notify">NOTIFY (3)</button>
+                <button class="tab-btn" data-category="database">DATABASE (2)</button>
+                <button class="tab-btn" data-category="logic">LOGIC (3)</button>
+                <button class="tab-btn" data-category="output">OUTPUT (3)</button>
+            </div>
+
+            <!-- Node Grids -->
+            <div class="nodes-container">
+                <!-- INPUT Nodes -->
+                <div class="nodes-grid active" data-category-content="input">
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large input-node"><i class="fas fa-file-upload"></i></div>
+                            <div>
+                                <h3>File Input</h3>
+                                <span class="node-type">INPUT</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Upload and read files from local system. Supports all document formats including PDF, Excel, Word, text files, and images.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Outputs:</strong> File content, metadata, file path
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Document processing, data import, file analysis
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large input-node"><i class="fas fa-keyboard"></i></div>
+                            <div>
+                                <h3>Text Input</h3>
+                                <span class="node-type">INPUT</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Direct text entry for workflow inputs. Supports plain text, formatted text, and multi-line input with variable substitution.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Outputs:</strong> Text content, character count
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Manual data entry, prompt templates, configuration
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large input-node"><i class="fas fa-link"></i></div>
+                            <div>
+                                <h3>URL Input</h3>
+                                <span class="node-type">INPUT</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Fetch content from URLs and APIs. Supports HTTP/HTTPS, authentication, headers, and automatic content type detection.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Outputs:</strong> URL content, response headers, status code
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Web scraping, API integration, content fetching
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large input-node"><i class="fas fa-webhook"></i></div>
+                            <div>
+                                <h3>Webhook Trigger</h3>
+                                <span class="node-type">INPUT</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Trigger workflows via HTTP webhooks. Receive POST requests from external services and start workflow execution automatically.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Outputs:</strong> Webhook payload, headers, sender info
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Event-driven automation, third-party integrations
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large input-node"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h3>Schedule Trigger</h3>
+                                <span class="node-type">INPUT</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Time-based workflow triggers. Schedule executions hourly, daily, weekly, or monthly with cron-like syntax support.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Outputs:</strong> Execution time, schedule info
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Automated reports, periodic data sync, backups
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLOUD Nodes -->
+                <div class="nodes-grid" data-category-content="cloud">
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large cloud-node"><i class="fab fa-google-drive"></i></div>
+                            <div>
+                                <h3>GDrive Read</h3>
+                                <span class="node-type">CLOUD</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Read files from Google Drive. Supports shared drives, file search, and automatic authentication via OAuth.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> File ID or search query<br>
+                                <strong>Outputs:</strong> File content, metadata
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Document retrieval, data import, backup automation
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large cloud-node"><i class="fab fa-google-drive"></i></div>
+                            <div>
+                                <h3>GDrive Write</h3>
+                                <span class="node-type">CLOUD</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Write files to Google Drive. Create new files or update existing ones with automatic version control.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> File content, destination path<br>
+                                <strong>Outputs:</strong> File ID, share link
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Report generation, backup storage, document sync
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large cloud-node"><i class="fab fa-google-drive"></i></div>
+                            <div>
+                                <h3>GDrive List</h3>
+                                <span class="node-type">CLOUD</span>
+                            </div>
+                        </div>
+                        <p class="node-description">List files and folders in Google Drive. Filter by type, date, or search query. Supports pagination.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Folder ID, filters<br>
+                                <strong>Outputs:</strong> File list, metadata array
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> File discovery, inventory management, bulk operations
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large cloud-node"><i class="fab fa-microsoft"></i></div>
+                            <div>
+                                <h3>OneDrive Read</h3>
+                                <span class="node-type">CLOUD</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Read files from Microsoft OneDrive. Supports personal and business accounts with Microsoft Graph API.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> File path or ID<br>
+                                <strong>Outputs:</strong> File content, metadata
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Office 365 integration, document retrieval
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large cloud-node"><i class="fab fa-microsoft"></i></div>
+                            <div>
+                                <h3>OneDrive Write</h3>
+                                <span class="node-type">CLOUD</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Write files to Microsoft OneDrive. Create or update files with automatic conflict resolution.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> File content, destination<br>
+                                <strong>Outputs:</strong> File URL, version info
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Document backup, Office 365 automation
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large cloud-node"><i class="fab fa-dropbox"></i></div>
+                            <div>
+                                <h3>Dropbox Read</h3>
+                                <span class="node-type">CLOUD</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Read files from Dropbox. Supports shared folders and file versioning with Dropbox API v2.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> File path<br>
+                                <strong>Outputs:</strong> File content, metadata
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> File retrieval, team collaboration, data sync
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large cloud-node"><i class="fab fa-dropbox"></i></div>
+                            <div>
+                                <h3>Dropbox Write</h3>
+                                <span class="node-type">CLOUD</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Write files to Dropbox. Automatic folder creation and conflict handling with version history.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> File content, path<br>
+                                <strong>Outputs:</strong> File ID, share link
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Backup automation, file sharing, data export
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EMAIL Nodes -->
+                <div class="nodes-grid" data-category-content="email">
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large email-node"><i class="fab fa-google"></i></div>
+                            <div>
+                                <h3>Gmail Read</h3>
+                                <span class="node-type">EMAIL</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Read emails from Gmail. Filter by sender, subject, date, or labels. Supports attachments and threading.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Search filters, count<br>
+                                <strong>Outputs:</strong> Email list, content, attachments
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Email automation, inbox monitoring, data extraction
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large email-node"><i class="fab fa-google"></i></div>
+                            <div>
+                                <h3>Gmail Send</h3>
+                                <span class="node-type">EMAIL</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Send emails via Gmail. Supports HTML templates, attachments, CC/BCC, and scheduling with Gmail API.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> To, subject, body, attachments<br>
+                                <strong>Outputs:</strong> Message ID, status
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Automated notifications, report distribution, alerts
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large email-node"><i class="fab fa-microsoft"></i></div>
+                            <div>
+                                <h3>Outlook Read</h3>
+                                <span class="node-type">EMAIL</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Read emails from Microsoft Outlook/Exchange. Filter, search, and extract email data with Graph API.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Filters, folder path<br>
+                                <strong>Outputs:</strong> Email list, metadata
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Enterprise email automation, Office 365 workflows
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large email-node"><i class="fab fa-microsoft"></i></div>
+                            <div>
+                                <h3>Outlook Send</h3>
+                                <span class="node-type">EMAIL</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Send emails via Outlook/Exchange. Full Microsoft Graph API support with templates and attachments.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Recipients, content, attachments<br>
+                                <strong>Outputs:</strong> Message ID, delivery status
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Corporate communications, automated reporting
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOCIAL Nodes -->
+                <div class="nodes-grid" data-category-content="social">
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large social-node"><i class="fab fa-twitter"></i></div>
+                            <div>
+                                <h3>Twitter Post</h3>
+                                <span class="node-type">SOCIAL</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Post tweets to Twitter/X. Supports media attachments, threading, and scheduling with Twitter API v2.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Tweet text, media, thread<br>
+                                <strong>Outputs:</strong> Tweet ID, URL, engagement
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Social media automation, announcements, engagement
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large social-node"><i class="fab fa-twitter"></i></div>
+                            <div>
+                                <h3>Twitter Read</h3>
+                                <span class="node-type">SOCIAL</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Read tweets from timeline, mentions, or search. Monitor brand, competitors, or trending topics.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Search query, filters<br>
+                                <strong>Outputs:</strong> Tweet list, metadata, sentiment
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Social listening, sentiment analysis, monitoring
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large social-node"><i class="fab fa-linkedin"></i></div>
+                            <div>
+                                <h3>LinkedIn Post</h3>
+                                <span class="node-type">SOCIAL</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Post content to LinkedIn. Share articles, images, and updates to personal profiles or company pages.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Content, media, visibility<br>
+                                <strong>Outputs:</strong> Post ID, URL, impressions
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Professional networking, thought leadership, B2B marketing
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large social-node"><i class="fab fa-facebook"></i></div>
+                            <div>
+                                <h3>Facebook Post</h3>
+                                <span class="node-type">SOCIAL</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Post to Facebook pages or groups. Schedule posts, add media, and track engagement with Graph API.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Post content, media, targeting<br>
+                                <strong>Outputs:</strong> Post ID, reach, engagement
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Social media marketing, community management
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large social-node"><i class="fab fa-instagram"></i></div>
+                            <div>
+                                <h3>Instagram Post</h3>
+                                <span class="node-type">SOCIAL</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Post photos and videos to Instagram. Supports stories, reels, and carousel posts via Instagram API.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Media, caption, hashtags<br>
+                                <strong>Outputs:</strong> Post ID, URL, likes
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Visual marketing, brand awareness, influencer content
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WEB Nodes -->
+                <div class="nodes-grid" data-category-content="web">
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large web-node"><i class="fas fa-spider"></i></div>
+                            <div>
+                                <h3>Web Crawler</h3>
+                                <span class="node-type">WEB</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Crawl and extract content from websites. Follow links, respect robots.txt, handle pagination automatically.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Start URL, depth, selectors<br>
+                                <strong>Outputs:</strong> Page content, links, metadata
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Web scraping, data collection, content aggregation
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large web-node"><i class="fas fa-code"></i></div>
+                            <div>
+                                <h3>HTML Parser</h3>
+                                <span class="node-type">WEB</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Parse HTML documents and extract structured data. CSS selectors, XPath, and regex support.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> HTML content, selectors<br>
+                                <strong>Outputs:</strong> Extracted data, DOM elements
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Data extraction, web scraping, content parsing
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large web-node"><i class="fas fa-exchange-alt"></i></div>
+                            <div>
+                                <h3>API Request</h3>
+                                <span class="node-type">WEB</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Make HTTP API requests. Full REST API support with authentication, headers, and response parsing.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> URL, method, headers, body<br>
+                                <strong>Outputs:</strong> Response data, status, headers
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> API integration, data fetching, webhooks
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROCESS Nodes -->
+                <div class="nodes-grid" data-category-content="process">
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large process-node"><i class="fas fa-brackets-curly"></i></div>
+                            <div>
+                                <h3>JSON Parser</h3>
+                                <span class="node-type">PROCESS</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Parse and transform JSON data. Extract fields, validate structure, convert formats.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> JSON string or object<br>
+                                <strong>Outputs:</strong> Parsed data, fields
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> API response parsing, data transformation
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large process-node"><i class="fas fa-file-csv"></i></div>
+                            <div>
+                                <h3>CSV Parser</h3>
+                                <span class="node-type">PROCESS</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Parse CSV files into structured data. Handle different delimiters, headers, and encoding.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> CSV content, options<br>
+                                <strong>Outputs:</strong> Array of objects, headers
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Spreadsheet import, data analysis, bulk operations
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large process-node"><i class="fas fa-file-code"></i></div>
+                            <div>
+                                <h3>XML Parser</h3>
+                                <span class="node-type">PROCESS</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Parse XML documents. XPath queries, namespace handling, and conversion to JSON.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> XML content, XPath<br>
+                                <strong>Outputs:</strong> Parsed data, elements
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Legacy system integration, SOAP APIs, RSS feeds
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large process-node"><i class="fas fa-filter"></i></div>
+                            <div>
+                                <h3>Data Filter</h3>
+                                <span class="node-type">PROCESS</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Filter datasets by criteria. Complex conditions, multiple filters, and logical operators.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Data array, filter rules<br>
+                                <strong>Outputs:</strong> Filtered data
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Data cleaning, condition-based routing, validation
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large process-node"><i class="fas fa-random"></i></div>
+                            <div>
+                                <h3>Transform</h3>
+                                <span class="node-type">PROCESS</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Transform data structures. Map, reduce, reshape, and convert between formats.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Data, transformation rules<br>
+                                <strong>Outputs:</strong> Transformed data
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Data normalization, format conversion, ETL pipelines
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large process-node"><i class="fas fa-object-group"></i></div>
+                            <div>
+                                <h3>Merge</h3>
+                                <span class="node-type">PROCESS</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Combine multiple data sources. Join, union, and aggregate data from different inputs.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Multiple data sources<br>
+                                <strong>Outputs:</strong> Merged dataset
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Data consolidation, report aggregation, data lakes
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large process-node"><i class="fas fa-file-pdf"></i></div>
+                            <div>
+                                <h3>PDF Processor</h3>
+                                <span class="node-type">PROCESS</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Advanced PDF operations. Extract text, images, metadata. Convert, split, merge PDFs.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> PDF file<br>
+                                <strong>Outputs:</strong> Text, images, metadata
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Document processing, data extraction, archiving
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large process-node"><i class="fas fa-file-excel"></i></div>
+                            <div>
+                                <h3>Excel Processor</h3>
+                                <span class="node-type">PROCESS</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Process Excel files. Read/write .xls and .xlsx, handle formulas, multiple sheets, formatting.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Excel file<br>
+                                <strong>Outputs:</strong> Data arrays, sheets
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Spreadsheet automation, reporting, data import/export
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large process-node"><i class="fas fa-file-word"></i></div>
+                            <div>
+                                <h3>Word Processor</h3>
+                                <span class="node-type">PROCESS</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Process Word documents. Extract text, images, tables from .doc and .docx files.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Word document<br>
+                                <strong>Outputs:</strong> Text, images, metadata
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Document analysis, content extraction, conversion
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large process-node"><i class="fas fa-image"></i></div>
+                            <div>
+                                <h3>Image Processor</h3>
+                                <span class="node-type">PROCESS</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Process and manipulate images. Resize, crop, convert formats, apply filters, extract metadata.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Image file, operations<br>
+                                <strong>Outputs:</strong> Processed image
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Image optimization, thumbnails, format conversion
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large process-node"><i class="fas fa-file-archive"></i></div>
+                            <div>
+                                <h3>Compress</h3>
+                                <span class="node-type">PROCESS</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Compress and decompress files. Support for ZIP, GZIP, and other compression formats.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Files, compression type<br>
+                                <strong>Outputs:</strong> Compressed file
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Backup, file transfer, storage optimization
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI MODELS Nodes -->
+                <div class="nodes-grid" data-category-content="ai">
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large ai-node"><i class="fas fa-robot"></i></div>
+                            <div>
+                                <h3>AI Model 1B</h3>
+                                <span class="node-type">AI MODEL</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Fast 1 billion parameter model (668 MB). Ultra-fast inference for real-time applications and chatbots.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Prompt, context, parameters<br>
+                                <strong>Outputs:</strong> AI response, tokens
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Quick Q&A, customer support, real-time chat
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large ai-node"><i class="fas fa-brain"></i></div>
+                            <div>
+                                <h3>AI Model 3B</h3>
+                                <span class="node-type">AI MODEL</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Balanced 3 billion parameter model (2.0 GB). High quality with excellent performance for general tasks.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Prompt, context, temperature<br>
+                                <strong>Outputs:</strong> AI response, confidence
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Content generation, analysis, document processing
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large ai-node god"><i class="fas fa-crown"></i></div>
+                            <div>
+                                <h3>GOD MODE</h3>
+                                <span class="node-type">AI MODEL</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Uncensored 7B+ parameter model (4.8 GB). Maximum capability, no filters, enterprise-grade performance.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Prompt, full context<br>
+                                <strong>Outputs:</strong> Unrestricted response
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Complex analysis, research, unrestricted applications
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRANSLATE Nodes -->
+                <div class="nodes-grid" data-category-content="translate">
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large translate-node"><i class="fas fa-search"></i></div>
+                            <div>
+                                <h3>Detect Language</h3>
+                                <span class="node-type">TRANSLATE</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Automatically detect language of input text. Supports 100+ languages with confidence scores.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Text content<br>
+                                <strong>Outputs:</strong> Language code, confidence
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Multi-language routing, content classification
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large translate-node"><i class="fas fa-language"></i></div>
+                            <div>
+                                <h3>Translate</h3>
+                                <span class="node-type">TRANSLATE</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Translate text between languages. High-quality neural translation with context preservation.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Text, source lang, target lang<br>
+                                <strong>Outputs:</strong> Translated text
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Internationalization, content localization, communication
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large translate-node"><i class="fas fa-globe"></i></div>
+                            <div>
+                                <h3>Multi-Language</h3>
+                                <span class="node-type">TRANSLATE</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Translate to multiple languages simultaneously. Batch translation for efficiency.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Text, target languages<br>
+                                <strong>Outputs:</strong> Multiple translations
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Global content distribution, multi-language support
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NOTIFY Nodes -->
+                <div class="nodes-grid" data-category-content="notify">
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large notify-node"><i class="fab fa-slack"></i></div>
+                            <div>
+                                <h3>Slack Notify</h3>
+                                <span class="node-type">NOTIFY</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Send notifications to Slack. Channel messages, DMs, rich formatting, and attachments.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Channel, message, attachments<br>
+                                <strong>Outputs:</strong> Message ID, timestamp
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Team alerts, workflow notifications, status updates
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large notify-node"><i class="fab fa-discord"></i></div>
+                            <div>
+                                <h3>Discord Notify</h3>
+                                <span class="node-type">NOTIFY</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Send messages to Discord. Webhooks, embeds, and rich media support.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Webhook URL, content, embeds<br>
+                                <strong>Outputs:</strong> Message ID
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Community notifications, bot messages, alerts
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large notify-node"><i class="fas fa-sms"></i></div>
+                            <div>
+                                <h3>SMS Alert</h3>
+                                <span class="node-type">NOTIFY</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Send SMS text messages. Twilio integration for critical alerts and notifications.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Phone number, message<br>
+                                <strong>Outputs:</strong> Delivery status, message ID
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Critical alerts, 2FA, emergency notifications
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DATABASE Nodes -->
+                <div class="nodes-grid" data-category-content="database">
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large db-node"><i class="fas fa-search"></i></div>
+                            <div>
+                                <h3>DB Query</h3>
+                                <span class="node-type">DATABASE</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Query databases. Support for SQL (MySQL, PostgreSQL, SQL Server) and NoSQL (MongoDB). Parameterized queries for security.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Connection, query, parameters<br>
+                                <strong>Outputs:</strong> Result set, row count
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Data retrieval, reporting, analytics
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large db-node"><i class="fas fa-database"></i></div>
+                            <div>
+                                <h3>DB Insert</h3>
+                                <span class="node-type">DATABASE</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Insert data into databases. Bulk inserts, transactions, and automatic schema mapping.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Connection, table, data<br>
+                                <strong>Outputs:</strong> Insert count, IDs
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Data storage, logging, ETL pipelines
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LOGIC Nodes -->
+                <div class="nodes-grid" data-category-content="logic">
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large logic-node"><i class="fas fa-code-branch"></i></div>
+                            <div>
+                                <h3>Condition</h3>
+                                <span class="node-type">LOGIC</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Conditional branching. If/else logic with complex conditions and multiple branches.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Data, condition rules<br>
+                                <strong>Outputs:</strong> True/false branches
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Decision trees, routing, validation
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large logic-node"><i class="fas fa-sync"></i></div>
+                            <div>
+                                <h3>Loop</h3>
+                                <span class="node-type">LOGIC</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Repeat operations. For-each, while, and do-until loops with break conditions.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Data array, iteration logic<br>
+                                <strong>Outputs:</strong> Loop results
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Batch processing, iteration, bulk operations
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large logic-node"><i class="fas fa-hourglass-half"></i></div>
+                            <div>
+                                <h3>Delay</h3>
+                                <span class="node-type">LOGIC</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Add time delays. Wait for specific duration or until a condition is met.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Duration, unit (ms/s/m/h)<br>
+                                <strong>Outputs:</strong> Continues after delay
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Rate limiting, scheduled execution, throttling
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OUTPUT Nodes -->
+                <div class="nodes-grid" data-category-content="output">
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large output-node"><i class="fas fa-desktop"></i></div>
+                            <div>
+                                <h3>Display</h3>
+                                <span class="node-type">OUTPUT</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Display results in the UI. Format, visualize, and present workflow outputs.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Data to display<br>
+                                <strong>Outputs:</strong> Visual output
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Results presentation, dashboards, debugging
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large output-node"><i class="fas fa-save"></i></div>
+                            <div>
+                                <h3>Save File</h3>
+                                <span class="node-type">OUTPUT</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Save output to file. Local filesystem, cloud storage, or download to user's computer.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Data, filename, format<br>
+                                <strong>Outputs:</strong> File path, success status
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> Report generation, data export, backups
+                        </div>
+                    </div>
+
+                    <div class="node-detail-card">
+                        <div class="node-header-detail">
+                            <div class="node-icon-large output-node"><i class="fas fa-server"></i></div>
+                            <div>
+                                <h3>HTTP Response</h3>
+                                <span class="node-type">OUTPUT</span>
+                            </div>
+                        </div>
+                        <p class="node-description">Return HTTP response. For webhook workflows, send data back to the caller.</p>
+                        <div class="node-ports">
+                            <div class="port-info">
+                                <strong>Inputs:</strong> Status code, body, headers<br>
+                                <strong>Outputs:</strong> HTTP response
+                            </div>
+                        </div>
+                        <div class="node-use-case">
+                            <strong>Use Case:</strong> API endpoints, webhook responses, integrations
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="how-to-use">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Tutorial</span>
+                <h2>How to Build Workflows</h2>
+                <p>Simple 4-step process to create powerful automation</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fas fa-mouse-pointer"></i></div>
+                    <h3>Drag & Drop Nodes</h3>
+                    <p>Select nodes from the library and drag them onto the canvas. Each node represents a specific operation or integration.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fas fa-sliders-h"></i></div>
+                    <h3>Configure Settings</h3>
+                    <p>Double-click nodes to configure their settings. Add API keys, define filters, set parameters, and customize behavior.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Connect Nodes</h3>
+                    <p>Click ports to create connections between nodes. Data flows from one node to the next through these connections.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-play-circle"></i></div>
+                    <h3>Execute & Monitor</h3>
+                    <p>Click Execute to run your workflow. Monitor progress in real-time and see results as each node completes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Build Your First Workflow?</h2>
+                <p>Start automating with SuperChat's visual workflow builder. No coding required.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">Request Demo</a>
+                    <a href="technology.html" class="btn btn-secondary btn-large">View Technology</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="./superchat_logo_4.png" alt="SuperChat" class="footer-logo">
+                    <p class="footer-tagline">Enterprise AI Solutions</p>
+                    <p>Powerful on-premise AI models for businesses that value privacy and control.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html">AI Models</a></li>
+                        <li><a href="workflows.html">Workflows</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="contact.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#team">Leadership</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SuperChat LLC. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

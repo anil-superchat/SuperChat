@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology & Architecture - SuperChat | On-Premise & Cloud AI</title>
+    <meta name="description" content="Learn about SuperChat's technology stack, deployment options, and API integrations. On-premise and cloud-ready AI platform.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="./superchat_logo_4.png" alt="SuperChat" class="logo">
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">AI Models</a></li>
+                <li><a href="workflows.html">Workflows</a></li>
+                <li><a href="technology.html" class="active">Technology</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-small">
+        <div class="container">
+            <div class="hero-content-center">
+                <span class="hero-badge">🔬 Technology</span>
+                <h1>Built for <span class="gradient-text">Enterprise Scale</span></h1>
+                <p class="hero-description">
+                    Modern architecture with flexible deployment options. Run on-premise, 
+                    in the cloud, or hybrid. Full control over your AI infrastructure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Overview -->
+    <section class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Stack</span>
+                <h2>Technology Stack</h2>
+                <p>Enterprise-grade technologies powering SuperChat</p>
+            </div>
+
+            <div class="stack-grid">
+                <div class="stack-card">
+                    <div class="stack-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI Engine</h3>
+                    <ul class="stack-list">
+                        <li><strong>WebLLM</strong> - Browser-based AI inference</li>
+                        <li><strong>WebGPU</strong> - Hardware acceleration</li>
+                        <li><strong>ONNX Runtime</strong> - Model optimization</li>
+                        <li><strong>TensorFlow.js</strong> - ML framework</li>
+                    </ul>
+                </div>
+
+                <div class="stack-card">
+                    <div class="stack-icon"><i class="fas fa-code"></i></div>
+                    <h3>Frontend</h3>
+                    <ul class="stack-list">
+                        <li><strong>HTML5/CSS3</strong> - Modern web standards</li>
+                        <li><strong>JavaScript ES6+</strong> - Interactive UI</li>
+                        <li><strong>Web Workers</strong> - Background processing</li>
+                        <li><strong>Service Workers</strong> - Offline capability</li>
+                    </ul>
+                </div>
+
+                <div class="stack-card">
+                    <div class="stack-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Document Processing</h3>
+                    <ul class="stack-list">
+                        <li><strong>PDF.js 3.11</strong> - PDF rendering & extraction</li>
+                        <li><strong>XLSX 0.18</strong> - Excel file processing</li>
+                        <li><strong>Mammoth 1.6</strong> - Word document conversion</li>
+                        <li><strong>Tesseract.js</strong> - OCR capabilities</li>
+                    </ul>
+                </div>
+
+                <div class="stack-card">
+                    <div class="stack-icon"><i class="fas fa-microphone"></i></div>
+                    <h3>Voice & Speech</h3>
+                    <ul class="stack-list">
+                        <li><strong>Web Speech API</strong> - TTS & recognition</li>
+                        <li><strong>MediaRecorder API</strong> - Voice recording</li>
+                        <li><strong>AudioContext</strong> - Audio processing</li>
+                        <li><strong>Emotion Detection</strong> - Sentiment analysis</li>
+                    </ul>
+                </div>
+
+                <div class="stack-card">
+                    <div class="stack-icon"><i class="fas fa-database"></i></div>
+                    <h3>Storage</h3>
+                    <ul class="stack-list">
+                        <li><strong>LocalStorage</strong> - Client-side persistence</li>
+                        <li><strong>IndexedDB</strong> - Large data storage</li>
+                        <li><strong>Cache API</strong> - Performance optimization</li>
+                        <li><strong>File System API</strong> - Local file access</li>
+                    </ul>
+                </div>
+
+                <div class="stack-card">
+                    <div class="stack-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Security</h3>
+                    <ul class="stack-list">
+                        <li><strong>Zero Trust</strong> - No external API calls</li>
+                        <li><strong>CSP</strong> - Content Security Policy</li>
+                        <li><strong>HTTPS Only</strong> - Encrypted connections</li>
+                        <li><strong>Data Isolation</strong> - Private by design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Architecture -->
+    <section class="deployment-arch">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Deployment</span>
+                <h2>Flexible Deployment Architecture</h2>
+                <p>Choose the deployment model that fits your requirements</p>
+            </div>
+
+            <!-- On-Premise Deployment -->
+            <div class="arch-detail">
+                <div class="arch-detail-header">
+                    <div class="arch-icon-large"><i class="fas fa-building"></i></div>
+                    <div>
+                        <h3>On-Premise Deployment</h3>
+                        <p class="arch-subtitle">Complete control, maximum security</p>
+                    </div>
+                </div>
+
+                <div class="arch-diagram-detailed">
+                    <div class="diagram-layer">
+                        <div class="layer-title">User Layer</div>
+                        <div class="layer-boxes">
+                            <div class="diagram-box user"><i class="fas fa-users"></i> Employees</div>
+                            <div class="diagram-box user"><i class="fas fa-laptop"></i> Workstations</div>
+                            <div class="diagram-box user"><i class="fas fa-mobile-alt"></i> Mobile Devices</div>
+                        </div>
+                    </div>
+
+                    <div class="diagram-arrow-down">↓</div>
+
+                    <div class="diagram-layer">
+                        <div class="layer-title">Network Layer</div>
+                        <div class="layer-boxes">
+                            <div class="diagram-box network"><i class="fas fa-network-wired"></i> Corporate Network</div>
+                            <div class="diagram-box network"><i class="fas fa-shield-alt"></i> Firewall</div>
+                            <div class="diagram-box network"><i class="fas fa-lock"></i> VPN</div>
+                        </div>
+                    </div>
+
+                    <div class="diagram-arrow-down">↓</div>
+
+                    <div class="diagram-layer">
+                        <div class="layer-title">Application Layer</div>
+                        <div class="layer-boxes">
+                            <div class="diagram-box app"><i class="fas fa-server"></i> Web Server</div>
+                            <div class="diagram-box app"><i class="fas fa-brain"></i> AI Models (Local)</div>
+                            <div class="diagram-box app"><i class="fas fa-cogs"></i> Workflow Engine</div>
+                        </div>
+                    </div>
+
+                    <div class="diagram-arrow-down">↓</div>
+
+                    <div class="diagram-layer">
+                        <div class="layer-title">Data Layer</div>
+                        <div class="layer-boxes">
+                            <div class="diagram-box data"><i class="fas fa-database"></i> Local Storage</div>
+                            <div class="diagram-box data"><i class="fas fa-hdd"></i> File System</div>
+                            <div class="diagram-box data"><i class="fas fa-archive"></i> Backup</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-features-grid">
+                    <div class="arch-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Zero External Dependencies</strong>
+                            <p>All processing happens within your infrastructure. No data leaves your network.</p>
+                        </div>
+                    </div>
+                    <div class="arch-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Air-Gapped Capable</strong>
+                            <p>Can operate completely disconnected from the internet for maximum security.</p>
+                        </div>
+                    </div>
+                    <div class="arch-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Compliance Ready</strong>
+                            <p>GDPR, HIPAA, SOC 2 compliant architecture. Full data sovereignty.</p>
+                        </div>
+                    </div>
+                    <div class="arch-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Custom Integration</strong>
+                            <p>Connect to existing internal systems via workflow nodes and APIs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cloud Deployment -->
+            <div class="arch-detail">
+                <div class="arch-detail-header">
+                    <div class="arch-icon-large"><i class="fas fa-cloud"></i></div>
+                    <div>
+                        <h3>Cloud Deployment</h3>
+                        <p class="arch-subtitle">Scalable, managed infrastructure</p>
+                    </div>
+                </div>
+
+                <div class="arch-diagram-detailed">
+                    <div class="diagram-layer">
+                        <div class="layer-title">User Access</div>
+                        <div class="layer-boxes">
+                            <div class="diagram-box user"><i class="fas fa-globe"></i> Global Users</div>
+                            <div class="diagram-box user"><i class="fas fa-mobile"></i> Any Device</div>
+                            <div class="diagram-box user"><i class="fas fa-wifi"></i> Internet Access</div>
+                        </div>
+                    </div>
+
+                    <div class="diagram-arrow-down">↓</div>
+
+                    <div class="diagram-layer">
+                        <div class="layer-title">CDN & Load Balancing</div>
+                        <div class="layer-boxes">
+                            <div class="diagram-box cloud"><i class="fas fa-layer-group"></i> CloudFront CDN</div>
+                            <div class="diagram-box cloud"><i class="fas fa-balance-scale"></i> Load Balancer</div>
+                            <div class="diagram-box cloud"><i class="fas fa-globe-americas"></i> Multi-Region</div>
+                        </div>
+                    </div>
+
+                    <div class="diagram-arrow-down">↓</div>
+
+                    <div class="diagram-layer">
+                        <div class="layer-title">Compute Layer</div>
+                        <div class="layer-boxes">
+                            <div class="diagram-box cloud"><i class="fab fa-aws"></i> AWS / Azure / GCP</div>
+                            <div class="diagram-box cloud"><i class="fas fa-cubes"></i> Containerized</div>
+                            <div class="diagram-box cloud"><i class="fas fa-arrows-alt"></i> Auto-Scaling</div>
+                        </div>
+                    </div>
+
+                    <div class="diagram-arrow-down">↓</div>
+
+                    <div class="diagram-layer">
+                        <div class="layer-title">Storage & Services</div>
+                        <div class="layer-boxes">
+                            <div class="diagram-box cloud"><i class="fas fa-database"></i> Cloud Storage</div>
+                            <div class="diagram-box cloud"><i class="fas fa-chart-line"></i> Monitoring</div>
+                            <div class="diagram-box cloud"><i class="fas fa-shield-alt"></i> Security</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-features-grid">
+                    <div class="arch-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Global Scale</strong>
+                            <p>Deploy to multiple regions for low-latency access worldwide.</p>
+                        </div>
+                    </div>
+                    <div class="arch-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Auto-Scaling</strong>
+                            <p>Automatically scale resources based on demand. Pay for what you use.</p>
+                        </div>
+                    </div>
+                    <div class="arch-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Managed Updates</strong>
+                            <p>Automatic updates and patches with zero downtime deployments.</p>
+                        </div>
+                    </div>
+                    <div class="arch-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Built-in Redundancy</strong>
+                            <p>High availability with automatic failover and disaster recovery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hybrid Deployment -->
+            <div class="arch-detail">
+                <div class="arch-detail-header">
+                    <div class="arch-icon-large"><i class="fas fa-network-wired"></i></div>
+                    <div>
+                        <h3>Hybrid Deployment</h3>
+                        <p class="arch-subtitle">Best of both worlds</p>
+                    </div>
+                </div>
+
+                <div class="hybrid-diagram">
+                    <div class="hybrid-side">
+                        <div class="hybrid-title"><i class="fas fa-building"></i> On-Premise</div>
+                        <div class="hybrid-box sensitive"><i class="fas fa-lock"></i> Sensitive Data</div>
+                        <div class="hybrid-box sensitive"><i class="fas fa-database"></i> Critical Workloads</div>
+                        <div class="hybrid-box sensitive"><i class="fas fa-shield-alt"></i> Regulated Data</div>
+                    </div>
+
+                    <div class="hybrid-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-icon"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="connector-text">Secure VPN / Direct Connect</div>
+                    </div>
+
+                    <div class="hybrid-side">
+                        <div class="hybrid-title"><i class="fas fa-cloud"></i> Cloud</div>
+                        <div class="hybrid-box cloud-item"><i class="fas fa-chart-bar"></i> Analytics</div>
+                        <div class="hybrid-box cloud-item"><i class="fas fa-globe"></i> Public APIs</div>
+                        <div class="hybrid-box cloud-item"><i class="fas fa-users"></i> External Users</div>
+                    </div>
+                </div>
+
+                <div class="arch-features-grid">
+                    <div class="arch-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Data Sovereignty</strong>
+                            <p>Keep sensitive data on-premise while leveraging cloud for scalability.</p>
+                        </div>
+                    </div>
+                    <div class="arch-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Cost Optimization</strong>
+                            <p>Balance infrastructure costs with workload-specific deployment.</p>
+                        </div>
+                    </div>
+                    <div class="arch-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Flexible Routing</strong>
+                            <p>Route workflows dynamically based on data sensitivity and requirements.</p>
+                        </div>
+                    </div>
+                    <div class="arch-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Gradual Migration</strong>
+                            <p>Migrate to cloud incrementally without disrupting operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APIs & Integrations -->
+    <section class="apis">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">APIs</span>
+                <h2>APIs & Integrations</h2>
+                <p>Pre-built integrations and extensible API framework</p>
+            </div>
+
+            <div class="api-categories">
+                <!-- Cloud Storage APIs -->
+                <div class="api-category">
+                    <div class="api-category-header">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Cloud Storage APIs</h3>
+                    </div>
+                    <div class="api-list">
+                        <div class="api-item">
+                            <div class="api-icon"><i class="fab fa-google-drive"></i></div>
+                            <div class="api-details">
+                                <h4>Google Drive API v3</h4>
+                                <p>Read/write/list files, manage permissions, shared drives</p>
+                                <span class="api-auth">OAuth 2.0</span>
+                            </div>
+                        </div>
+                        <div class="api-item">
+                            <div class="api-icon"><i class="fab fa-microsoft"></i></div>
+                            <div class="api-details">
+                                <h4>Microsoft Graph API</h4>
+                                <p>OneDrive, Outlook, SharePoint integration</p>
+                                <span class="api-auth">OAuth 2.0</span>
+                            </div>
+                        </div>
+                        <div class="api-item">
+                            <div class="api-icon"><i class="fab fa-dropbox"></i></div>
+                            <div class="api-details">
+                                <h4>Dropbox API v2</h4>
+                                <p>File operations, sharing, team folders</p>
+                                <span class="api-auth">OAuth 2.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communication APIs -->
+                <div class="api-category">
+                    <div class="api-category-header">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Communication APIs</h3>
+                    </div>
+                    <div class="api-list">
+                        <div class="api-item">
+                            <div class="api-icon"><i class="fab fa-google"></i></div>
+                            <div class="api-details">
+                                <h4>Gmail API</h4>
+                                <p>Send/receive emails, labels, attachments</p>
+                                <span class="api-auth">OAuth 2.0</span>
+                            </div>
+                        </div>
+                        <div class="api-item">
+                            <div class="api-icon"><i class="fab fa-slack"></i></div>
+                            <div class="api-details">
+                                <h4>Slack Web API</h4>
+                                <p>Messages, channels, webhooks, bot interactions</p>
+                                <span class="api-auth">OAuth 2.0 / Webhook</span>
+                            </div>
+                        </div>
+                        <div class="api-item">
+                            <div class="api-icon"><i class="fab fa-discord"></i></div>
+                            <div class="api-details">
+                                <h4>Discord API</h4>
+                                <p>Webhooks, embeds, bot commands</p>
+                                <span class="api-auth">Bot Token / Webhook</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media APIs -->
+                <div class="api-category">
+                    <div class="api-category-header">
+                        <i class="fas fa-hashtag"></i>
+                        <h3>Social Media APIs</h3>
+                    </div>
+                    <div class="api-list">
+                        <div class="api-item">
+                            <div class="api-icon"><i class="fab fa-twitter"></i></div>
+                            <div class="api-details">
+                                <h4>Twitter API v2</h4>
+                                <p>Post tweets, read timeline, search, analytics</p>
+                                <span class="api-auth">OAuth 2.0</span>
+                            </div>
+                        </div>
+                        <div class="api-item">
+                            <div class="api-icon"><i class="fab fa-linkedin"></i></div>
+                            <div class="api-details">
+                                <h4>LinkedIn API</h4>
+                                <p>Share content, company pages, analytics</p>
+                                <span class="api-auth">OAuth 2.0</span>
+                            </div>
+                        </div>
+                        <div class="api-item">
+                            <div class="api-icon"><i class="fab fa-facebook"></i></div>
+                            <div class="api-details">
+                                <h4>Facebook Graph API</h4>
+                                <p>Pages, posts, groups, insights</p>
+                                <span class="api-auth">OAuth 2.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database APIs -->
+                <div class="api-category">
+                    <div class="api-category-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Database Connections</h3>
+                    </div>
+                    <div class="api-list">
+                        <div class="api-item">
+                            <div class="api-icon"><i class="fas fa-server"></i></div>
+                            <div class="api-details">
+                                <h4>SQL Databases</h4>
+                                <p>MySQL, PostgreSQL, SQL Server, SQLite</p>
+                                <span class="api-auth">Connection String</span>
+                            </div>
+                        </div>
+                        <div class="api-item">
+                            <div class="api-icon"><i class="fas fa-database"></i></div>
+                            <div class="api-details">
+                                <h4>NoSQL Databases</h4>
+                                <p>MongoDB, Redis, Cassandra</p>
+                                <span class="api-auth">Connection String / API Key</span>
+                            </div>
+                        </div>
+                        <div class="api-item">
+                            <div class="api-icon"><i class="fas fa-table"></i></div>
+                            <div class="api-details">
+                                <h4>REST APIs</h4>
+                                <p>Any RESTful API with JSON/XML responses</p>
+                                <span class="api-auth">Custom / API Key</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Node API Reference -->
+    <section class="node-api">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Reference</span>
+                <h2>Workflow Node API</h2>
+                <p>Technical specifications for workflow nodes</p>
+            </div>
+
+            <div class="api-reference">
+                <div class="api-ref-card">
+                    <h3>Node Structure</h3>
+                    <pre class="code-block"><code>{
+  "id": "unique-node-id",
+  "type": "node-type",
+  "name": "Node Name",
+  "position": { "x": 100, "y": 100 },
+  "config": {
+    "param1": "value1",
+    "param2": "value2"
+  },
+  "inputs": [
+    { "port": "input1", "type": "string" }
+  ],
+  "outputs": [
+    { "port": "output1", "type": "object" }
+  ]
+}</code></pre>
+                </div>
+
+                <div class="api-ref-card">
+                    <h3>Connection Structure</h3>
+                    <pre class="code-block"><code>{
+  "id": "connection-id",
+  "sourceNode": "node-1-id",
+  "sourcePort": "output1",
+  "targetNode": "node-2-id",
+  "targetPort": "input1"
+}</code></pre>
+                </div>
+
+                <div class="api-ref-card">
+                    <h3>Data Types</h3>
+                    <div class="data-types">
+                        <div class="data-type"><span class="type-badge">string</span> Text data</div>
+                        <div class="data-type"><span class="type-badge">number</span> Numeric values</div>
+                        <div class="data-type"><span class="type-badge">boolean</span> True/false</div>
+                        <div class="data-type"><span class="type-badge">object</span> JSON objects</div>
+                        <div class="data-type"><span class="type-badge">array</span> Lists of items</div>
+                        <div class="data-type"><span class="type-badge">file</span> File objects</div>
+                        <div class="data-type"><span class="type-badge">any</span> Any type</div>
+                    </div>
+                </div>
+
+                <div class="api-ref-card">
+                    <h3>Execution Flow</h3>
+                    <ol class="execution-steps">
+                        <li><strong>Validation:</strong> Check node configuration and connections</li>
+                        <li><strong>Initialization:</strong> Set up node contexts and resources</li>
+                        <li><strong>Execution:</strong> Process inputs and generate outputs</li>
+                        <li><strong>Data Flow:</strong> Pass outputs to connected nodes</li>
+                        <li><strong>Completion:</strong> Update status and cleanup resources</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Requirements -->
+    <section class="requirements">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Requirements</span>
+                <h2>System Requirements</h2>
+                <p>Hardware and software requirements for optimal performance</p>
+            </div>
+
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <div class="req-icon"><i class="fas fa-laptop"></i></div>
+                    <h3>Browser-Based (Minimum)</h3>
+                    <ul class="req-list">
+                        <li><strong>Browser:</strong> Chrome 113+ or Edge 113+</li>
+                        <li><strong>CPU:</strong> 4-core processor (Intel i5 / AMD Ryzen 5)</li>
+                        <li><strong>RAM:</strong> 8 GB</li>
+                        <li><strong>GPU:</strong> Integrated graphics with WebGPU</li>
+                        <li><strong>Storage:</strong> 10 GB available space</li>
+                        <li><strong>Network:</strong> Internet for initial load</li>
+                    </ul>
+                    <div class="req-note">Supports AI Model 1B and Lightweight models</div>
+                </div>
+
+                <div class="requirement-card featured">
+                    <div class="req-icon"><i class="fas fa-desktop"></i></div>
+                    <h3>Browser-Based (Recommended)</h3>
+                    <ul class="req-list">
+                        <li><strong>Browser:</strong> Chrome 120+ or Edge 120+</li>
+                        <li><strong>CPU:</strong> 8-core processor (Intel i7 / AMD Ryzen 7)</li>
+                        <li><strong>RAM:</strong> 16 GB</li>
+                        <li><strong>GPU:</strong> Dedicated GPU with 4GB+ VRAM</li>
+                        <li><strong>Storage:</strong> 20 GB available space (SSD)</li>
+                        <li><strong>Network:</strong> Broadband for cloud features</li>
+                    </ul>
+                    <div class="req-note">Supports all models including GOD MODE</div>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="req-icon"><i class="fas fa-server"></i></div>
+                    <h3>On-Premise Server</h3>
+                    <ul class="req-list">
+                        <li><strong>OS:</strong> Linux (Ubuntu 20.04+) / Windows Server 2019+</li>
+                        <li><strong>CPU:</strong> 16-core Xeon / EPYC processor</li>
+                        <li><strong>RAM:</strong> 64 GB ECC</li>
+                        <li><strong>GPU:</strong> NVIDIA A100 / V100 (optional but recommended)</li>
+                        <li><strong>Storage:</strong> 500 GB SSD RAID</li>
+                        <li><strong>Network:</strong> 10 Gbps internal, isolated network capable</li>
+                    </ul>
+                    <div class="req-note">Enterprise deployment, multi-user support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Benchmarks -->
+    <section class="benchmarks">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Performance</span>
+                <h2>Performance Benchmarks</h2>
+                <p>Real-world performance metrics across different configurations</p>
+            </div>
+
+            <div class="benchmark-table-wrapper">
+                <table class="benchmark-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Hardware</th>
+                            <th>Latency (First Token)</th>
+                            <th>Throughput</th>
+                            <th>Memory Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AI Model 1B</strong></td>
+                            <td>Intel i5 + Integrated GPU</td>
+                            <td>&lt; 50ms</td>
+                            <td>~50 tokens/sec</td>
+                            <td>~800 MB</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Model 3B</strong></td>
+                            <td>Intel i7 + NVIDIA GTX 1660</td>
+                            <td>&lt; 200ms</td>
+                            <td>~30 tokens/sec</td>
+                            <td>~2.5 GB</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reasoning Model</strong></td>
+                            <td>Intel i7 + NVIDIA RTX 3060</td>
+                            <td>&lt; 300ms</td>
+                            <td>~25 tokens/sec</td>
+                            <td>~3.0 GB</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GOD MODE</strong></td>
+                            <td>AMD Ryzen 9 + NVIDIA RTX 4090</td>
+                            <td>&lt; 500ms</td>
+                            <td>~20 tokens/sec</td>
+                            <td>~5.5 GB</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>GOD MODE</strong></td>
+                            <td>Server: Xeon + NVIDIA A100</td>
+                            <td>&lt; 100ms</td>
+                            <td>~100 tokens/sec</td>
+                            <td>~6.0 GB</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="benchmark-notes">
+                <p><i class="fas fa-info-circle"></i> <strong>Note:</strong> Performance varies based on hardware, model parameters, and context length. Benchmarks measured with 8K context, temperature 0.3.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Compliance -->
+    <section class="security">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Security</span>
+                <h2>Security & Compliance</h2>
+                <p>Enterprise-grade security built into every layer</p>
+            </div>
+
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Data Privacy</h3>
+                    <ul class="security-list">
+                        <li>Zero external API calls for AI processing</li>
+                        <li>Data never leaves your infrastructure</li>
+                        <li>No telemetry or usage tracking</li>
+                        <li>Complete data sovereignty</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Compliance</h3>
+                    <ul class="security-list">
+                        <li>GDPR compliant architecture</li>
+                        <li>HIPAA-ready deployment options</li>
+                        <li>SOC 2 Type II certified processes</li>
+                        <li>PCI DSS compatible</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Encryption</h3>
+                    <ul class="security-list">
+                        <li>TLS 1.3 for data in transit</li>
+                        <li>AES-256 encryption at rest</li>
+                        <li>End-to-end encryption options</li>
+                        <li>Hardware security module support</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon"><i class="fas fa-user-lock"></i></div>
+                    <h3>Access Control</h3>
+                    <ul class="security-list">
+                        <li>Role-based access control (RBAC)</li>
+                        <li>SSO integration (SAML, OAuth)</li>
+                        <li>Multi-factor authentication</li>
+                        <li>Audit logging and monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Discuss Your Deployment?</h2>
+                <p>Our team can help design the right architecture for your requirements.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">Contact Sales</a>
+                    <a href="about.html" class="btn btn-secondary btn-large">Learn About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="./superchat_logo_4.png" alt="SuperChat" class="footer-logo">
+                    <p class="footer-tagline">Enterprise AI Solutions</p>
+                    <p>Powerful on-premise AI models for businesses that value privacy and control.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html">AI Models</a></li>
+                        <li><a href="workflows.html">Workflows</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="contact.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#team">Leadership</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SuperChat LLC. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
