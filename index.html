@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuperChat - Enterprise AI Solutions | On-Premise & Cloud</title>
-    <meta name="description" content="SuperChat delivers powerful on-premise and cloud AI models for enterprise applications. 7 specialized models from 668MB to 4.8GB for complete control.">
+    <link rel="icon" type="image/x-icon" href="./assests/super.png">
+    <meta name="description"
+        content="SuperChat delivers powerful on-premise and cloud AI models for enterprise applications. 7 specialized models from 668MB to 4.8GB for complete control.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Updated Navigation with Dropdowns -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <img src="./superchat_logo_4.png" alt="SuperChat" class="logo">
+                <img src="./assests/superchat.png" alt="SuperChat" class="logo">
             </div>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
@@ -21,10 +26,61 @@
                 <span></span>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="active">AI Models</a></li>
-                <li><a href="workflows.html">Workflows</a></li>
-                <li><a href="technology.html">Technology</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <!-- AI Models Dropdown -->
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-toggle">
+                        AI Models <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.html#architecture" class="section-badge">Architecture</a>
+                        <a href="index.html#ai-models" class="section-badge">All Models</a>
+                        <a href="index.html#deployment" class="section-badge">Deployment Options</a>
+                    </div>
+                </li>
+
+                <!-- Workflows Dropdown -->
+                <li class="dropdown">
+                    <a href="workflows.html" class="dropdown-toggle">
+                        Workflows <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="workflows.html#visual-example" class="section-badge">Visual Examples</a>
+                        <a href="workflows.html#node-library" class="section-badge">Node Library</a>
+                    </div>
+                </li>
+
+                <!-- Technology Dropdown -->
+                <li class="dropdown">
+                    <a href="technology.html" class="dropdown-toggle">
+                        Technology <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="technology.html#tech-stack" class="section-badge">Tech Stack</a>
+                        <a href="technology.html#deployment-arch" class="section-badge">Deployment Architecture</a>
+                        <a href="technology.html#on-premise" class="section-badge">On-Premise</a>
+                        <a href="technology.html#cloud-deployment" class="section-badge">Cloud Deployment</a>
+                        <a href="technology.html#apis" class="section-badge">APIs & Integrations</a>
+                        <a href="technology.html#api-reference" class="section-badge">API Reference</a>
+                        <a href="technology.html#requirements" class="section-badge">System Requirements</a>
+
+                    </div>
+                </li>
+
+                <!-- About Us Dropdown -->
+                <li class="dropdown">
+                    <a href="about.html" class="dropdown-toggle">
+                        About Us <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#team" class="section-badge">Leadership Team</a>
+                        <a href="about.html#story" class="section-badge">Our Story</a>
+                        <a href="about.html#values" class="section-badge">Core Values</a>
+                        <a href="about.html#advisors" class="section-badge">Advisory Board</a>
+                        <a href="about.html#stats" class="section-badge">Company Stats</a>
+                        <a href="about.html#careers" class="section-badge">Careers</a>
+                    </div>
+                </li>
+
                 <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
             </ul>
         </div>
@@ -35,11 +91,10 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <span class="hero-badge">🚀 Enterprise AI Platform</span>
                     <h1>Powerful AI Models<br>Running <span class="gradient-text">On Your Terms</span></h1>
                     <p class="hero-description">
-                        Deploy 7 specialized AI models on-premise or in the cloud. 
-                        Complete data control, zero external dependencies, 
+                        Deploy 7 specialized AI models on-premise or in the cloud.
+                        Complete data control, zero external dependencies,
                         enterprise-grade performance.
                     </p>
                     <div class="hero-stats">
@@ -63,45 +118,52 @@
                 </div>
                 <div class="hero-visual">
                     <div class="architecture-diagram">
-                        <div class="diagram-card">
-                            <i class="fas fa-brain"></i>
-                            <h3>7 AI Models</h3>
-                            <p>668MB to 4.8GB</p>
+                        <button class="carousel-btn prev">‹</button>
+
+                        <div class="carousel-track">
+                            <div class="diagram-card active">
+                                <i class="fas fa-brain"></i>
+                                <h3>7 AI Models</h3>
+                                <p>668MB to 4.8GB</p>
+                            </div>
+
+                            <div class="diagram-card">
+                                <i class="fas fa-server"></i>
+                                <h3>On-Premise</h3>
+                                <p>Your Infrastructure</p>
+                            </div>
+
+                            <div class="diagram-card">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>Secure</h3>
+                                <p>Zero External Calls</p>
+                            </div>
                         </div>
-                        <div class="diagram-arrow">→</div>
-                        <div class="diagram-card">
-                            <i class="fas fa-server"></i>
-                            <h3>On-Premise</h3>
-                            <p>Your Infrastructure</p>
-                        </div>
-                        <div class="diagram-arrow">→</div>
-                        <div class="diagram-card">
-                            <i class="fas fa-shield-alt"></i>
-                            <h3>Secure</h3>
-                            <p>Zero External Calls</p>
-                        </div>
+
+                        <button class="carousel-btn next">›</button>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Architecture Overview -->
-    <section class="architecture">
+    <section class="architecture" id="architecture">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Architecture</span>
                 <h2>On-Premise AI Architecture</h2>
                 <p>Complete control over your AI infrastructure with flexible deployment options</p>
             </div>
-            
+
             <div class="architecture-grid">
                 <div class="arch-card">
                     <div class="arch-icon">
                         <i class="fas fa-database"></i>
                     </div>
                     <h3>Browser-Based Runtime</h3>
-                    <p>Runs directly in modern browsers using WebGPU acceleration. No external servers, no API calls, complete privacy.</p>
+                    <p>Runs directly in modern browsers using WebGPU acceleration. No external servers, no API calls,
+                        complete privacy.</p>
                     <ul class="arch-features">
                         <li><i class="fas fa-check"></i> WebGPU acceleration</li>
                         <li><i class="fas fa-check"></i> WebLLM engine</li>
@@ -114,7 +176,8 @@
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h3>Modular Architecture</h3>
-                    <p>55+ workflow nodes organized into 12 functional modules. Mix and match components for your specific needs.</p>
+                    <p>55+ workflow nodes organized into 12 functional modules. Mix and match components for your
+                        specific needs.</p>
                     <ul class="arch-features">
                         <li><i class="fas fa-check"></i> INPUT/OUTPUT nodes</li>
                         <li><i class="fas fa-check"></i> CLOUD integration</li>
@@ -127,7 +190,8 @@
                         <i class="fas fa-lock"></i>
                     </div>
                     <h3>Zero External Dependencies</h3>
-                    <p>All AI processing happens locally. Your data never leaves your infrastructure. Perfect for regulated industries.</p>
+                    <p>All AI processing happens locally. Your data never leaves your infrastructure. Perfect for
+                        regulated industries.</p>
                     <ul class="arch-features">
                         <li><i class="fas fa-check"></i> No API keys required</li>
                         <li><i class="fas fa-check"></i> GDPR/HIPAA friendly</li>
@@ -140,7 +204,8 @@
                         <i class="fas fa-plug"></i>
                     </div>
                     <h3>Flexible Integration</h3>
-                    <p>Connect to your existing systems via workflow nodes. Support for databases, cloud storage, email, and more.</p>
+                    <p>Connect to your existing systems via workflow nodes. Support for databases, cloud storage, email,
+                        and more.</p>
                     <ul class="arch-features">
                         <li><i class="fas fa-check"></i> REST API support</li>
                         <li><i class="fas fa-check"></i> Database connectors</li>
@@ -152,10 +217,10 @@
     </section>
 
     <!-- AI Models Section -->
-    <section class="ai-models">
+    <section class="ai-models" id="ai-models">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">AI Models</span>
+
                 <h2>7 Specialized Models for Every Use Case</h2>
                 <p>From lightweight 668MB to uncensored 4.8GB GOD MODE - choose the right model for your needs</p>
             </div>
@@ -172,7 +237,7 @@
                     <h3>AI Model 1B</h3>
                     <div class="model-size">668 MB</div>
                     <p class="model-description">
-                        Ultra-fast responses for real-time applications. Perfect for chatbots, 
+                        Ultra-fast responses for real-time applications. Perfect for chatbots,
                         customer service, and interactive tools where speed is critical.
                     </p>
                     <ul class="model-features">
@@ -208,7 +273,7 @@
                     <h3>AI Model 3B</h3>
                     <div class="model-size">2.0 GB</div>
                     <p class="model-description">
-                        The perfect balance of speed and quality. Handles complex tasks 
+                        The perfect balance of speed and quality. Handles complex tasks
                         with high accuracy while maintaining excellent performance.
                     </p>
                     <ul class="model-features">
@@ -243,7 +308,7 @@
                     <h3>Reasoning Model</h3>
                     <div class="model-size">2.5 GB</div>
                     <p class="model-description">
-                        Specialized for complex problem-solving and logical reasoning. 
+                        Specialized for complex problem-solving and logical reasoning.
                         Excels at multi-step tasks, analysis, and decision-making.
                     </p>
                     <ul class="model-features">
@@ -278,7 +343,7 @@
                     <h3>Multilingual Model</h3>
                     <div class="model-size">2.2 GB</div>
                     <p class="model-description">
-                        Native support for 12+ languages with auto-detection. Perfect for 
+                        Native support for 12+ languages with auto-detection. Perfect for
                         global applications and international customer bases.
                     </p>
                     <ul class="model-features">
@@ -313,7 +378,7 @@
                     <h3>Creative Model</h3>
                     <div class="model-size">2.8 GB</div>
                     <p class="model-description">
-                        Optimized for creative tasks with enhanced imagination and novel output. 
+                        Optimized for creative tasks with enhanced imagination and novel output.
                         Ideal for content creation, marketing, and storytelling.
                     </p>
                     <ul class="model-features">
@@ -337,40 +402,6 @@
                     </div>
                 </div>
 
-                <!-- Model 6: Lightweight Model -->
-                <div class="model-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="model-header">
-                        <div class="model-icon">
-                            <i class="fas fa-feather"></i>
-                        </div>
-                        <span class="model-badge lightweight">Lightweight</span>
-                    </div>
-                    <h3>Lightweight Model</h3>
-                    <div class="model-size">450 MB</div>
-                    <p class="model-description">
-                        Ultra-compact model for resource-constrained environments. 
-                        Perfect for edge devices, mobile, and high-volume scenarios.
-                    </p>
-                    <ul class="model-features">
-                        <li><i class="fas fa-check-circle"></i> Minimal footprint</li>
-                        <li><i class="fas fa-check-circle"></i> Edge-ready</li>
-                        <li><i class="fas fa-check-circle"></i> Battery efficient</li>
-                        <li><i class="fas fa-check-circle"></i> High throughput</li>
-                    </ul>
-                    <div class="model-specs">
-                        <div class="spec">
-                            <span class="spec-label">RAM:</span>
-                            <span class="spec-value">&lt; 1GB</span>
-                        </div>
-                        <div class="spec">
-                            <span class="spec-label">Speed:</span>
-                            <span class="spec-value">Ultra-Fast</span>
-                        </div>
-                    </div>
-                    <div class="model-use-cases">
-                        <strong>Best for:</strong> Mobile apps, IoT devices, edge computing
-                    </div>
-                </div>
 
                 <!-- Model 7: GOD MODE -->
                 <div class="model-card premium" data-aos="fade-up">
@@ -384,7 +415,7 @@
                     <h3>GOD MODE</h3>
                     <div class="model-size">4.8 GB</div>
                     <p class="model-description">
-                        Unrestricted, maximum capability model with no content filters. 
+                        Unrestricted, maximum capability model with no content filters.
                         Highest accuracy and most comprehensive knowledge base.
                     </p>
                     <ul class="model-features">
@@ -446,23 +477,32 @@
                         </tr>
                         <tr>
                             <td><strong>Speed</strong></td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></td>
                             <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></td>
                             <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i></td>
                             <td><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
                         </tr>
                         <tr>
                             <td><strong>Quality</strong></td>
                             <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></td>
                             <td><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i></td>
                         </tr>
                         <tr>
                             <td><strong>Resource Usage</strong></td>
@@ -511,10 +551,10 @@
     </section>
 
     <!-- Deployment Options -->
-    <section class="deployment">
+    <section class="deployment" id="deployment">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Deployment</span>
+
                 <h2>Flexible Deployment Options</h2>
                 <p>Run SuperChat wherever your business requires - complete flexibility</p>
             </div>
@@ -525,7 +565,8 @@
                         <i class="fas fa-building"></i>
                     </div>
                     <h3>On-Premise</h3>
-                    <p>Deploy SuperChat on your own infrastructure for maximum control and security. Perfect for regulated industries and sensitive data.</p>
+                    <p>Deploy SuperChat on your own infrastructure for maximum control and security. Perfect for
+                        regulated industries and sensitive data.</p>
                     <ul class="deploy-benefits">
                         <li><i class="fas fa-check"></i> Complete data control</li>
                         <li><i class="fas fa-check"></i> No external API calls</li>
@@ -540,7 +581,8 @@
                         <i class="fas fa-cloud"></i>
                     </div>
                     <h3>Private Cloud</h3>
-                    <p>Deploy in your private cloud environment (AWS, Azure, GCP) with dedicated resources and complete isolation.</p>
+                    <p>Deploy in your private cloud environment (AWS, Azure, GCP) with dedicated resources and complete
+                        isolation.</p>
                     <ul class="deploy-benefits">
                         <li><i class="fas fa-check"></i> Dedicated instances</li>
                         <li><i class="fas fa-check"></i> VPC isolation</li>
@@ -555,7 +597,8 @@
                         <i class="fas fa-desktop"></i>
                     </div>
                     <h3>Browser-Based</h3>
-                    <p>Run entirely in the browser using WebGPU. No server infrastructure required - just open and use.</p>
+                    <p>Run entirely in the browser using WebGPU. No server infrastructure required - just open and use.
+                    </p>
                     <ul class="deploy-benefits">
                         <li><i class="fas fa-check"></i> Zero infrastructure</li>
                         <li><i class="fas fa-check"></i> Instant deployment</li>
@@ -570,7 +613,8 @@
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h3>Hybrid</h3>
-                    <p>Combine on-premise and cloud deployments for optimal flexibility. Use the right deployment for each use case.</p>
+                    <p>Combine on-premise and cloud deployments for optimal flexibility. Use the right deployment for
+                        each use case.</p>
                     <ul class="deploy-benefits">
                         <li><i class="fas fa-check"></i> Best of both worlds</li>
                         <li><i class="fas fa-check"></i> Workload distribution</li>
@@ -597,12 +641,35 @@
         </div>
     </section>
 
+    <!-- Floating Chat Button -->
+    <div id="chatbot-toggle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="chatbot-overlay">
+        <div id="chatbot-modal">
+            <button id="chatbot-close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <iframe src="./chatbot.html" frameborder="0" id="chatbot-iframe"></iframe>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="./chatboat-widget.css">
+    <script src="./chatboat-widget.js"></script>
+
+
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="./superchat_logo_4.png" alt="SuperChat" class="footer-logo">
+                    <img src="./assests/superchatB.png" alt="SuperChat" class="footer-logo">
                     <p class="footer-tagline">Enterprise AI Solutions</p>
                     <p>Powerful on-premise AI models for businesses that value privacy and control.</p>
                 </div>
@@ -628,23 +695,32 @@
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="#">Documentation</a></li>
-                        <li><a href="#">API Reference</a></li>
                         <li><a href="#">Support</a></li>
-                        <li><a href="#">Community</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 SuperChat LLC. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Security</a>
+                    <a href="#" data-modal="privacy">Privacy Policy</a>
+                    <a href="#" data-modal="terms">Terms of Service</a>
+                    <a href="#" data-modal="security">Security</a>
                 </div>
             </div>
+
+            <!-- Reusable Modal -->
+            <div class="modal-overlay" id="infoModal">
+                <div class="modal">
+                    <button class="modal-close">&times;</button>
+                    <h2 id="modalTitle"></h2>
+                    <div id="modalContent"></div>
+                </div>
+            </div>
+
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

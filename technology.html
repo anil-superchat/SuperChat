@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technology & Architecture - SuperChat | On-Premise & Cloud AI</title>
-    <meta name="description" content="Learn about SuperChat's technology stack, deployment options, and API integrations. On-premise and cloud-ready AI platform.">
+    <link rel="icon" type="image/x-icon" href="./assests/super.png">
+    <meta name="description"
+        content="Learn about SuperChat's technology stack, deployment options, and API integrations. On-premise and cloud-ready AI platform.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Updated Navigation with Dropdowns -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <img src="./superchat_logo_4.png" alt="SuperChat" class="logo">
+                <img src="./assests/superchat.png" alt="SuperChat" class="logo">
             </div>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
@@ -21,10 +25,62 @@
                 <span></span>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">AI Models</a></li>
-                <li><a href="workflows.html">Workflows</a></li>
-                <li><a href="technology.html" class="active">Technology</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <!-- AI Models Dropdown -->
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-toggle">
+                        AI Models <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.html#architecture" class="section-badge">Architecture</a>
+                        <a href="index.html#ai-models" class="section-badge">All Models</a>
+                        <a href="index.html#deployment" class="section-badge">Deployment Options</a>
+                    </div>
+                </li>
+
+                <!-- Workflows Dropdown -->
+                <li class="dropdown">
+                    <a href="workflows.html" class="dropdown-toggle">
+                        Workflows <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="workflows.html#overview" class="section-badge">Overview</a>
+                        <a href="workflows.html#visual-example" class="section-badge">Visual Examples</a>
+                        <a href="workflows.html#node-library" class="section-badge">Node Library</a>
+                    </div>
+                </li>
+
+                <!-- Technology Dropdown -->
+                <li class="dropdown">
+                    <a href="technology.html" class="dropdown-toggle">
+                        Technology <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="technology.html#tech-stack" class="section-badge">Tech Stack</a>
+                        <a href="technology.html#deployment-arch" class="section-badge">Deployment Architecture</a>
+                        <a href="technology.html#cloud-deployment" class="section-badge">Cloud Deployment</a>
+                        <a href="technology.html#apis" class="section-badge">APIs & Integrations</a>
+                        <a href="technology.html#api-reference" class="section-badge">API Reference</a>
+                        <a href="technology.html#requirements" class="section-badge">System Requirements</a>
+
+                    </div>
+                </li>
+
+                <!-- About Us Dropdown -->
+                <li class="dropdown">
+                    <a href="about.html" class="dropdown-toggle">
+                        About Us <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#mission" class="section-badge">Mission & Vision</a>
+                        <a href="about.html#story" class="section-badge">Our Story</a>
+                        <a href="about.html#values" class="section-badge">Core Values</a>
+                        <a href="about.html#team" class="section-badge">Leadership Team</a>
+                        <a href="about.html#advisors" class="section-badge">Advisory Board</a>
+                        <a href="about.html#stats" class="section-badge">Company Stats</a>
+                        <a href="about.html#careers" class="section-badge">Careers</a>
+                    </div>
+                </li>
+
                 <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
             </ul>
         </div>
@@ -34,10 +90,8 @@
     <section class="hero-small">
         <div class="container">
             <div class="hero-content-center">
-                <span class="hero-badge">🔬 Technology</span>
-                <h1>Built for <span class="gradient-text">Enterprise Scale</span></h1>
                 <p class="hero-description">
-                    Modern architecture with flexible deployment options. Run on-premise, 
+                    Modern architecture with flexible deployment options. Run on-premise,
                     in the cloud, or hybrid. Full control over your AI infrastructure.
                 </p>
             </div>
@@ -45,10 +99,9 @@
     </section>
 
     <!-- Tech Stack Overview -->
-    <section class="tech-stack">
+    <section class="tech-stack" id="tech-stack">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Stack</span>
                 <h2>Technology Stack</h2>
                 <p>Enterprise-grade technologies powering SuperChat</p>
             </div>
@@ -124,10 +177,10 @@
     </section>
 
     <!-- Deployment Architecture -->
-    <section class="deployment-arch">
+    <section class="deployment-arch" id="deployment-arch">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Deployment</span>
+
                 <h2>Flexible Deployment Architecture</h2>
                 <p>Choose the deployment model that fits your requirements</p>
             </div>
@@ -157,7 +210,8 @@
                     <div class="diagram-layer">
                         <div class="layer-title">Network Layer</div>
                         <div class="layer-boxes">
-                            <div class="diagram-box network"><i class="fas fa-network-wired"></i> Corporate Network</div>
+                            <div class="diagram-box network"><i class="fas fa-network-wired"></i> Corporate Network
+                            </div>
                             <div class="diagram-box network"><i class="fas fa-shield-alt"></i> Firewall</div>
                             <div class="diagram-box network"><i class="fas fa-lock"></i> VPN</div>
                         </div>
@@ -219,7 +273,7 @@
             </div>
 
             <!-- Cloud Deployment -->
-            <div class="arch-detail">
+            <div class="arch-detail" id="cloud-deployment">
                 <div class="arch-detail-header">
                     <div class="arch-icon-large"><i class="fas fa-cloud"></i></div>
                     <div>
@@ -314,7 +368,7 @@
                     </div>
                 </div>
 
-                <div class="hybrid-diagram">
+                <div class="hybrid-diagram" id="on-premise">
                     <div class="hybrid-side">
                         <div class="hybrid-title"><i class="fas fa-building"></i> On-Premise</div>
                         <div class="hybrid-box sensitive"><i class="fas fa-lock"></i> Sensitive Data</div>
@@ -371,10 +425,10 @@
     </section>
 
     <!-- APIs & Integrations -->
-    <section class="apis">
+    <section class="apis" id="apis">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">APIs</span>
+
                 <h2>APIs & Integrations</h2>
                 <p>Pre-built integrations and extensible API framework</p>
             </div>
@@ -520,10 +574,10 @@
     </section>
 
     <!-- Node API Reference -->
-    <section class="node-api">
+    <section class="node-api" id="api-reference">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Reference</span>
+
                 <h2>Workflow Node API</h2>
                 <p>Technical specifications for workflow nodes</p>
             </div>
@@ -588,10 +642,10 @@
     </section>
 
     <!-- System Requirements -->
-    <section class="requirements">
+    <section class="requirements" id="requirements">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Requirements</span>
+
                 <h2>System Requirements</h2>
                 <p>Hardware and software requirements for optimal performance</p>
             </div>
@@ -643,10 +697,10 @@
     </section>
 
     <!-- Performance Benchmarks -->
-    <section class="benchmarks">
+    <section class="benchmarks" id="benchmarks">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Performance</span>
+
                 <h2>Performance Benchmarks</h2>
                 <p>Real-world performance metrics across different configurations</p>
             </div>
@@ -703,16 +757,17 @@
             </div>
 
             <div class="benchmark-notes">
-                <p><i class="fas fa-info-circle"></i> <strong>Note:</strong> Performance varies based on hardware, model parameters, and context length. Benchmarks measured with 8K context, temperature 0.3.</p>
+                <p><i class="fas fa-info-circle"></i> <strong>Note:</strong> Performance varies based on hardware, model
+                    parameters, and context length. Benchmarks measured with 8K context, temperature 0.3.</p>
             </div>
         </div>
     </section>
 
     <!-- Security & Compliance -->
-    <section class="security">
+    <section class="security" id="security">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Security</span>
+
                 <h2>Security & Compliance</h2>
                 <p>Enterprise-grade security built into every layer</p>
             </div>
@@ -779,12 +834,35 @@
         </div>
     </section>
 
+
+
+    <!-- Floating Chat Button -->
+    <div id="chatbot-toggle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="chatbot-overlay">
+        <div id="chatbot-modal">
+            <button id="chatbot-close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <iframe src="./chatbot.html" frameborder="0" id="chatbot-iframe"></iframe>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="./chatboat-widget.css">
+    <script src="./chatboat-widget.js"></script>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="./superchat_logo_4.png" alt="SuperChat" class="footer-logo">
+                    <img src="./assests/superchatB.png" alt="SuperChat" class="footer-logo">
                     <p class="footer-tagline">Enterprise AI Solutions</p>
                     <p>Powerful on-premise AI models for businesses that value privacy and control.</p>
                 </div>
@@ -819,14 +897,25 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 SuperChat LLC. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Security</a>
+                    <a href="#" data-modal="privacy">Privacy Policy</a>
+                    <a href="#" data-modal="terms">Terms of Service</a>
+                    <a href="#" data-modal="security">Security</a>
                 </div>
             </div>
+
+            <!-- Reusable Modal -->
+            <div class="modal-overlay" id="infoModal">
+                <div class="modal">
+                    <button class="modal-close">&times;</button>
+                    <h2 id="modalTitle"></h2>
+                    <div id="modalContent"></div>
+                </div>
+            </div>
+
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

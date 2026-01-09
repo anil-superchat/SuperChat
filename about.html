@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - SuperChat | Enterprise AI Leadership</title>
-    <meta name="description" content="Learn about SuperChat's mission to deliver enterprise AI solutions. Meet our leadership team and discover our vision for the future of AI.">
+    <link rel="icon" type="image/x-icon" href="./assests/super.png">
+    <meta name="description"
+        content="Learn about SuperChat's mission to deliver enterprise AI solutions. Meet our leadership team and discover our vision for the future of AI.">
+    <link rel="stylesheet" href="./about.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Updated Navigation with Dropdowns -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <img src="./superchat_logo_4.png" alt="SuperChat" class="logo">
+                <img src="./assests/superchat.png" alt="SuperChat" class="logo">
             </div>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
@@ -21,199 +26,86 @@
                 <span></span>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">AI Models</a></li>
-                <li><a href="workflows.html">Workflows</a></li>
-                <li><a href="technology.html">Technology</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
+                <!-- AI Models Dropdown -->
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-toggle">
+                        AI Models <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.html#architecture" class="section-badge">Architecture</a>
+                        <a href="index.html#ai-models" class="section-badge">All Models</a>
+                        <a href="index.html#deployment" class="section-badge">Deployment Options</a>
+                    </div>
+                </li>
+
+                <!-- Workflows Dropdown -->
+                <li class="dropdown">
+                    <a href="workflows.html" class="dropdown-toggle">
+                        Workflows <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="workflows.html#overview" class="section-badge">Overview</a>
+                        <a href="workflows.html#visual-example" class="section-badge">Visual Examples</a>
+                        <a href="workflows.html#node-library" class="section-badge">Node Library</a>
+                    </div>
+                </li>
+
+                <!-- Technology Dropdown -->
+                <li class="dropdown">
+                    <a href="technology.html" class="dropdown-toggle ">
+                        Technology <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="technology.html#tech-stack" class="section-badge">Tech Stack</a>
+                        <a href="technology.html#deployment-arch" class="section-badge">Deployment Architecture</a>
+                        <a href="technology.html#on-premise" class="section-badge">On-Premise</a>
+                        <a href="technology.html#cloud-deployment" class="section-badge">Cloud Deployment</a>
+                        <a href="technology.html#apis" class="section-badge">APIs & Integrations</a>
+                        <a href="technology.html#api-reference" class="section-badge">API Reference</a>
+                        <a href="technology.html#requirements" class="section-badge">System Requirements</a>
+
+                    </div>
+                </li>
+
+                <!-- About Us Dropdown -->
+                <li class="dropdown">
+                    <a href="about.html" class="dropdown-toggle">
+                        About Us <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#team" class="section-badge">Leadership Team</a>
+                        <a href="about.html#story" class="section-badge">Our Story</a>
+                        <a href="about.html#values" class="section-badge">Core Values</a>
+                        <a href="about.html#advisors" class="section-badge">Advisory Board</a>
+                        <a href="about.html#stats" class="section-badge">Company Stats</a>
+                        <a href="about.html#careers" class="section-badge">Careers</a>
+                    </div>
+                </li>
+
                 <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
             </ul>
         </div>
     </nav>
 
+
     <!-- Hero Section -->
     <section class="hero-small">
         <div class="container">
             <div class="hero-content-center">
-                <span class="hero-badge">🏢 About SuperChat</span>
-                <h1>Building the Future of<br><span class="gradient-text">Enterprise AI</span></h1>
                 <p class="hero-description">
-                    We're on a mission to democratize enterprise AI. Every business 
+                    We're on a mission to democratize enterprise AI. Every business
                     deserves powerful AI tools that respect privacy and provide complete control.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Mission & Vision -->
-    <section class="mission-vision">
-        <div class="container">
-            <div class="mv-grid">
-                <div class="mv-card">
-                    <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
-                    <h2>Our Mission</h2>
-                    <p>
-                        To empower organizations with powerful, privacy-first AI solutions that 
-                        run entirely on their infrastructure. We believe businesses should have 
-                        complete control over their AI capabilities without compromising on 
-                        performance, security, or privacy.
-                    </p>
-                </div>
-
-                <div class="mv-card">
-                    <div class="mv-icon"><i class="fas fa-eye"></i></div>
-                    <h2>Our Vision</h2>
-                    <p>
-                        A world where every organization can leverage cutting-edge AI technology 
-                        without sacrificing data sovereignty. We're building the infrastructure 
-                        for a future where AI is accessible, transparent, and under your control.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Company Story -->
-    <section class="company-story">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Our Story</span>
-                <h2>How SuperChat Was Born</h2>
-            </div>
-
-            <div class="story-content">
-                <div class="story-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2023</div>
-                        <div class="timeline-content">
-                            <h3>The Problem</h3>
-                            <p>
-                                We saw enterprises struggling with AI adoption. They wanted powerful 
-                                AI capabilities but couldn't accept sending sensitive data to external 
-                                APIs. Cloud-based AI services posed compliance risks, data sovereignty 
-                                concerns, and unpredictable costs.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">2024</div>
-                        <div class="timeline-content">
-                            <h3>The Breakthrough</h3>
-                            <p>
-                                WebGPU and WebLLM technologies matured, enabling browser-based AI 
-                                inference with hardware acceleration. We realized we could build 
-                                enterprise-grade AI that runs entirely on-premise, with zero 
-                                external dependencies.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">2025</div>
-                        <div class="timeline-content">
-                            <h3>The Solution</h3>
-                            <p>
-                                SuperChat was founded with a clear mission: deliver powerful AI 
-                                models that organizations can deploy on their own infrastructure. 
-                                We built a platform combining 7 specialized models with a visual 
-                                workflow builder and 55+ integration nodes.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">2026</div>
-                        <div class="timeline-content">
-                            <h3>Today & Beyond</h3>
-                            <p>
-                                SuperChat now powers AI workflows for enterprises across healthcare, 
-                                finance, government, and regulated industries. We continue innovating, 
-                                adding more models, improving performance, and expanding integration 
-                                capabilities.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Values -->
-    <section class="values">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Values</span>
-                <h2>What Drives Us</h2>
-                <p>The principles that guide everything we do</p>
-            </div>
-
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Privacy First</h3>
-                    <p>
-                        Your data is yours. Period. We design every feature with privacy 
-                        as the foundation, not an afterthought. Zero telemetry, zero external 
-                        calls, zero compromise.
-                    </p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-rocket"></i></div>
-                    <h3>Innovation</h3>
-                    <p>
-                        We push boundaries and embrace emerging technologies. From WebGPU 
-                        acceleration to voice cloning, we're always exploring what's possible 
-                        in on-premise AI.
-                    </p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-users"></i></div>
-                    <h3>Customer Success</h3>
-                    <p>
-                        Your success is our success. We provide dedicated support, extensive 
-                        documentation, and work closely with customers to solve their unique 
-                        challenges.
-                    </p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
-                    <h3>Transparency</h3>
-                    <p>
-                        No black boxes. We're open about our technology, capabilities, and 
-                        limitations. You deserve to know exactly how your AI systems work.
-                    </p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-award"></i></div>
-                    <h3>Excellence</h3>
-                    <p>
-                        We hold ourselves to the highest standards. Every model, every feature, 
-                        every line of code is crafted with attention to detail and commitment 
-                        to quality.
-                    </p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>Partnership</h3>
-                    <p>
-                        We don't just sell software—we build long-term partnerships. Your 
-                        feedback shapes our roadmap, and we grow together as technology evolves.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Leadership Team -->
     <section class="team" id="team">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Leadership</span>
+
                 <h2>Meet Our Team</h2>
                 <p>Experienced leaders from AI, enterprise software, and security</p>
             </div>
@@ -224,15 +116,21 @@
                         <div class="photo-placeholder"><i class="fas fa-user"></i></div>
                     </div>
                     <div class="member-info">
-                        <h3>Dr. Sarah Chen</h3>
+                        <h3>Chris Philipose</h3>
                         <div class="member-title">Chief Executive Officer</div>
                         <p class="member-bio">
-                            Former VP of AI at Microsoft, PhD in Machine Learning from Stanford. 
-                            15+ years building enterprise AI systems. Led teams deploying AI 
-                            solutions to Fortune 500 companies.
+                            A distinguished Computer Engineer, Christudas Philipose (Chris) consistently
+                            ranked at the top of his academic career and earned the prestigious
+                            <strong>“Young Scientist”</strong> title from the Maharashtra State Government
+                            and the Dr. Homi Bhabha Research Center.
+                            <br><br>
+                            During his engineering studies, he demonstrated early leadership by running
+                            <strong>AISP</strong>, an entrepreneurship program, and founding an ISP company,
+                            <strong>Web-Surf ISP</strong>, which provided optical fiber internet connectivity
+                            across three districts of Mumbai.
                         </p>
                         <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/chrisphilipose"><i class="fab fa-linkedin"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
@@ -243,15 +141,16 @@
                         <div class="photo-placeholder"><i class="fas fa-user"></i></div>
                     </div>
                     <div class="member-info">
-                        <h3>Michael Rodriguez</h3>
-                        <div class="member-title">Chief Technology Officer</div>
+                        <h3>Margaret Verghese</h3>
+                        <div class="member-title">Chief Operating Officer</div>
                         <p class="member-bio">
-                            Ex-Google Brain researcher, MIT graduate. Specialized in edge AI 
-                            and model optimization. Led development of TensorFlow Lite and 
+                            Ex-Google Brain researcher, MIT graduate. Specialized in edge AI
+                            and model optimization. Led development of TensorFlow Lite and
                             contributed to WebGPU standards.
                         </p>
                         <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/margaret-verghese-a83645380"><i
+                                    class="fab fa-linkedin"></i></a>
                             <a href="#"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
@@ -262,15 +161,15 @@
                         <div class="photo-placeholder"><i class="fas fa-user"></i></div>
                     </div>
                     <div class="member-info">
-                        <h3>Jennifer Williams</h3>
-                        <div class="member-title">Chief Product Officer</div>
+                        <h3>Sree Vattikuti</h3>
+                        <div class="member-title">Chief Maarketing Officer</div>
                         <p class="member-bio">
-                            Former Product Lead at Salesforce Einstein. Expert in enterprise 
-                            software and AI product strategy. MBA from Harvard Business School. 
+                            Former Product Lead at Salesforce Einstein. Expert in enterprise
+                            software and AI product strategy. MBA from Harvard Business School.
                             Passionate about user-centric design.
                         </p>
                         <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/sreevattikuti"><i class="fab fa-linkedin"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
@@ -284,8 +183,8 @@
                         <h3>David Kim</h3>
                         <div class="member-title">Chief Security Officer</div>
                         <p class="member-bio">
-                            20+ years in enterprise security. Former CISO at major financial 
-                            institutions. CISSP certified. Expert in zero-trust architecture 
+                            20+ years in enterprise security. Former CISO at major financial
+                            institutions. CISSP certified. Expert in zero-trust architecture
                             and compliance frameworks (GDPR, HIPAA, SOC 2).
                         </p>
                         <div class="member-social">
@@ -303,8 +202,8 @@
                         <h3>Dr. Aisha Patel</h3>
                         <div class="member-title">VP of Research</div>
                         <p class="member-bio">
-                            AI researcher with 30+ published papers. PhD in Natural Language 
-                            Processing from Carnegie Mellon. Pioneered techniques in efficient 
+                            AI researcher with 30+ published papers. PhD in Natural Language
+                            Processing from Carnegie Mellon. Pioneered techniques in efficient
                             model compression and quantization.
                         </p>
                         <div class="member-social">
@@ -322,8 +221,8 @@
                         <h3>Robert Thompson</h3>
                         <div class="member-title">VP of Engineering</div>
                         <p class="member-bio">
-                            Former Engineering Director at AWS. Built large-scale distributed 
-                            systems serving millions of users. Expert in cloud architecture, 
+                            Former Engineering Director at AWS. Built large-scale distributed
+                            systems serving millions of users. Expert in cloud architecture,
                             DevOps, and high-performance computing.
                         </p>
                         <div class="member-social">
@@ -341,8 +240,8 @@
                         <h3>Lisa Anderson</h3>
                         <div class="member-title">VP of Customer Success</div>
                         <p class="member-bio">
-                            15+ years in enterprise software sales and support. Built customer 
-                            success teams at Atlassian and ServiceNow. Expert in enterprise 
+                            15+ years in enterprise software sales and support. Built customer
+                            success teams at Atlassian and ServiceNow. Expert in enterprise
                             onboarding and technical account management.
                         </p>
                         <div class="member-social">
@@ -360,8 +259,8 @@
                         <h3>James Martinez</h3>
                         <div class="member-title">VP of Operations</div>
                         <p class="member-bio">
-                            MBA from Wharton. Former COO at enterprise SaaS startups. Expert 
-                            in scaling operations, supply chain optimization, and business 
+                            MBA from Wharton. Former COO at enterprise SaaS startups. Expert
+                            in scaling operations, supply chain optimization, and business
                             process automation.
                         </p>
                         <div class="member-social">
@@ -374,11 +273,165 @@
         </div>
     </section>
 
-    <!-- Advisory Board -->
-    <section class="advisors">
+
+    <!-- Company Story -->
+    <section class="company-story" id="story">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Advisors</span>
+                <h2>How SuperChat Was Born</h2>
+            </div>
+
+            <div class="story-content">
+                <div class="story-timeline">
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">The Vision</div>
+                        <div class="timeline-content">
+                            <h3>Privacy-First Enterprise AI</h3>
+                            <p>
+                                Enterprises worldwide were struggling to adopt AI safely. Cloud-based
+                                AI tools exposed sensitive data, lacked customization, and introduced
+                                compliance risks. SuperChat was envisioned as a privacy-first,
+                                on-premise AI platform where data never leaves the organization.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">Innovation</div>
+                        <div class="timeline-content">
+                            <h3>On-Premise AI & Local Execution</h3>
+                            <p>
+                                By leveraging edge AI, local LLM execution, and a proprietary
+                                operating system, SuperChat enabled enterprises to run powerful AI
+                                models entirely within their own infrastructure—offering full control,
+                                security, and predictable costs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h3>First Enterprise Validation</h3>
+                            <p>
+                                SuperChat signed its first enterprise client for AI and robotics
+                                implementation, proving the demand for secure, on-premise AI solutions
+                                across regulated industries.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <h3>Platform Launch & Rapid Growth</h3>
+                            <p>
+                                The SuperChat platform was officially launched, featuring a
+                                ChatGPT-like conversational interface, document intelligence,
+                                workflow automation, and 55+ integration nodes. Within months,
+                                SuperChat secured an exclusive contract with a Fortune 50 company.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year" id="Today">Today & Beyond</div>
+                        <div class="timeline-content">
+                            <h3>Building the Future of Enterprise AI</h3>
+                            <p>
+                                SuperChat is now expanding globally, developing custom AI chips,
+                                advancing robotics automation, and delivering end-to-end AI ecosystems
+                                for healthcare, finance, education, government, and enterprise clients
+                                worldwide.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Core Values -->
+    <section class="values" id="values">
+        <div class="container">
+            <div class="section-header">
+
+                <h2>What Drives Us</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Privacy First</h3>
+                    <p>
+                        Your data is yours. Period. We design every feature with privacy
+                        as the foundation, not an afterthought. Zero telemetry, zero external
+                        calls, zero compromise.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Innovation</h3>
+                    <p>
+                        We push boundaries and embrace emerging technologies. From WebGPU
+                        acceleration to voice cloning, we're always exploring what's possible
+                        in on-premise AI.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h3>Customer Success</h3>
+                    <p>
+                        Your success is our success. We provide dedicated support, extensive
+                        documentation, and work closely with customers to solve their unique
+                        challenges.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>Transparency</h3>
+                    <p>
+                        No black boxes. We're open about our technology, capabilities, and
+                        limitations. You deserve to know exactly how your AI systems work.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-award"></i></div>
+                    <h3>Excellence</h3>
+                    <p>
+                        We hold ourselves to the highest standards. Every model, every feature,
+                        every line of code is crafted with attention to detail and commitment
+                        to quality.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Partnership</h3>
+                    <p>
+                        We don't just sell software—we build long-term partnerships. Your
+                        feedback shapes our roadmap, and we grow together as technology evolves.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Advisory Board -->
+    <section class="advisors" id="advisors">
+        <div class="container">
+            <div class="section-header">
+
                 <h2>Advisory Board</h2>
                 <p>Industry experts guiding our strategic direction</p>
             </div>
@@ -416,40 +469,70 @@
     </section>
 
     <!-- Company Stats -->
-    <section class="stats">
+    <section class="stats" id="stats">
         <div class="container">
             <div class="stats-grid">
+
                 <div class="stat-item">
-                    <div class="stat-number">500+</div>
+                    <div class="stat-number" data-value="8" data-suffix="">
+                        8
+                    </div>
+                    <div class="stat-label">Months Old</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number" data-value="6" data-suffix="+">
+                        6+
+                    </div>
                     <div class="stat-label">Enterprise Customers</div>
                 </div>
+
                 <div class="stat-item">
-                    <div class="stat-number">95%</div>
+                    <div class="stat-number" data-value="100" data-suffix="%">
+                        100%
+                    </div>
+                    <div class="stat-label">Profitable</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number" data-value="95" data-suffix="%">
+                        95%
+                    </div>
                     <div class="stat-label">Customer Satisfaction</div>
                 </div>
+
                 <div class="stat-item">
-                    <div class="stat-number">50M+</div>
+                    <div class="stat-number" data-value="5" data-suffix="M+">
+                        5M+
+                    </div>
                     <div class="stat-label">AI Inferences Daily</div>
                 </div>
+
                 <div class="stat-item">
-                    <div class="stat-number">12</div>
+                    <div class="stat-number" data-value="4" data-suffix="+">
+                        4+
+                    </div>
                     <div class="stat-label">Countries Deployed</div>
                 </div>
+
             </div>
         </div>
     </section>
 
+
     <!-- Careers Teaser -->
-    <section class="careers">
+    <section class="careers" id="careers">
         <div class="container">
             <div class="careers-content">
                 <div class="careers-icon"><i class="fas fa-rocket"></i></div>
                 <h2>Join Our Team</h2>
                 <p>
-                    We're building the future of enterprise AI and looking for talented 
+                    We're building the future of enterprise AI and looking for talented
                     individuals who share our passion for privacy, innovation, and excellence.
                 </p>
-                <a href="contact.html" class="btn btn-primary">View Open Positions</a>
+                <button class="btn btn-primary" id="openCareersModal">
+                    View Open Positions
+                </button>
             </div>
         </div>
     </section>
@@ -462,18 +545,40 @@
                 <p>Contact us to discuss how SuperChat can transform your organization's AI capabilities.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn btn-primary btn-large">Get in Touch</a>
-                    <a href="index.html" class="btn btn-secondary btn-large">Explore AI Models</a>
+                    <a href="index.html#ai-models" class="btn btn-secondary btn-large">Explore AI Models</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Floating Chat Button -->
+    <div id="chatbot-toggle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="chatbot-overlay">
+        <div id="chatbot-modal">
+            <button id="chatbot-close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <iframe src="./chatbot.html" frameborder="0" id="chatbot-iframe"></iframe>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="./chatboat-widget.css">
+    <script src="./chatboat-widget.js"></script>
+
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="./superchat_logo_4.png" alt="SuperChat" class="footer-logo">
+                    <img src="./assests/superchatB.png" alt="SuperChat" class="footer-logo">
                     <p class="footer-tagline">Enterprise AI Solutions</p>
                     <p>Powerful on-premise AI models for businesses that value privacy and control.</p>
                 </div>
@@ -508,14 +613,42 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 SuperChat LLC. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Security</a>
+                    <a href="#" data-modal="privacy">Privacy Policy</a>
+                    <a href="#" data-modal="terms">Terms of Service</a>
+                    <a href="#" data-modal="security">Security</a>
                 </div>
             </div>
+
+            <!-- Reusable Modal -->
+            <div class="modal-overlay" id="infoModal">
+                <div class="modal">
+                    <button class="modal-close">&times;</button>
+                    <h2 id="modalTitle"></h2>
+                    <div id="modalContent"></div>
+                </div>
+            </div>
+
         </div>
     </footer>
 
+    <!-- Careers Modal (Separate) -->
+    <div class="careers-modal-overlay" id="careersModal">
+        <div class="careers-modal">
+            <button class="careers-modal-close">&times;</button>
+
+            <h2>Careers at SuperChat</h2>
+            <p>
+                We are expanding our team. Open positions will be listed here soon.
+            </p>
+
+            <p class="careers-note">
+                📩 Email us at <strong>hello@superchat.in</strong>
+            </p>
+        </div>
+    </div>
+    <script src="./about.js"></script>
     <script src="script.js"></script>
+
 </body>
+
 </html>

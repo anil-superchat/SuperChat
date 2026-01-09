@@ -224,19 +224,20 @@ if (window.innerWidth > 768) {
 // Stats Counter Animation
 // ===================================
 function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    
-    const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-            element.textContent = formatStatNumber(target);
-            clearInterval(timer);
-        } else {
-            element.textContent = formatStatNumber(Math.floor(start));
-        }
-    }, 16);
+  let start = 0;
+  const increment = target / (duration / 16);
+
+  const timer = setInterval(() => {
+    start += increment;
+    if (start >= target) {
+      element.textContent = target;
+      clearInterval(timer);
+    } else {
+      element.textContent = Math.floor(start);
+    }
+  }, 16);
 }
+
 
 function formatStatNumber(num) {
     if (num >= 1000000) {
@@ -252,28 +253,31 @@ function formatStatNumber(num) {
 
 // Animate stats on scroll
 const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
-            statNumbers.forEach(statNumber => {
-                const originalText = statNumber.textContent;
-                const numMatch = originalText.match(/\d+/);
-                if (numMatch) {
-                    const targetNum = parseInt(numMatch[0]);
-                    animateCounter(statNumber, targetNum);
-                }
-            });
-            statObserver.unobserve(entry.target);
-        }
-    });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const counters = entry.target.querySelectorAll('.count');
+
+      counters.forEach(counter => {
+        const target = parseInt(counter.dataset.target);
+        animateCounter(counter, target);
+      });
+
+      statObserver.unobserve(entry.target);
+    }
+  });
 }, { threshold: 0.5 });
 
-const statsContainers = document.querySelectorAll('.hero-stats, .stats-grid');
-statsContainers.forEach(container => {
-    if (container) {
-        statObserver.observe(container);
-    }
+document.querySelectorAll('.stats-grid').forEach(container => {
+  statObserver.observe(container);
 });
+
+
+// const statsContainers = document.querySelectorAll('.hero-stats, .stats-grid');
+// statsContainers.forEach(container => {
+//     if (container) {
+//         statObserver.observe(container);
+//     }
+// });
 
 // ===================================
 // Navbar Background on Scroll
@@ -550,3 +554,97 @@ if (typeof performance !== 'undefined' && performance.timing) {
 // function gtag(){dataLayer.push(arguments);}
 // gtag('js', new Date());
 // gtag('config', 'GA_MEASUREMENT_ID');
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".diagram-card");
+  const nextBtn = document.querySelector(".carousel-btn.next");
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+
+  let currentIndex = 0;
+
+  function showCard(index) {
+    cards.forEach((card, i) => {
+      card.classList.toggle("active", i === index);
+    });
+  }
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    showCard(currentIndex);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    showCard(currentIndex);
+  });
+
+  // Optional auto-slide
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    showCard(currentIndex);
+  }, 4000);
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("infoModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalContent = document.getElementById("modalContent");
+  const closeBtn = document.querySelector(".modal-close");
+
+  const modalData = {
+    privacy: {
+      title: "Privacy Policy",
+      content: `
+        <p>We respect your privacy and ensure full control of your data.</p>
+        <ul>
+          <li>No third-party data sharing</li>
+          <li>On-premise & secure storage</li>
+          <li>Enterprise-grade encryption</li>
+        </ul>
+      `
+    },
+    terms: {
+      title: "Terms of Service",
+      content: `
+        <p>By using SuperChat, you agree to the following terms:</p>
+        <ul>
+          <li>Licensed usage only</li>
+          <li>No reverse engineering</li>
+          <li>Service provided as-is</li>
+        </ul>
+      `
+    },
+    security: {
+      title: "Security",
+      content: `
+        <p>Security is built into our platform:</p>
+        <ul>
+          <li>Zero external API calls</li>
+          <li>On-premise deployment</li>
+          <li>Role-based access control</li>
+        </ul>
+      `
+    }
+  };
+
+  document.querySelectorAll(".footer-links a").forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const type = link.dataset.modal;
+      modalTitle.innerHTML = modalData[type].title;
+      modalContent.innerHTML = modalData[type].content;
+      modal.classList.add("active");
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
+  modal.addEventListener("click", e => {
+    if (e.target === modal) modal.classList.remove("active");
+  });
+});

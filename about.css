@@ -1,0 +1,46 @@
+/* Careers Modal Overlay */
+.careers-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100; /* higher than infoModal */
+}
+
+/* Show careers modal */
+.careers-modal-overlay.active {
+  display: flex;
+}
+
+/* Modal Box */
+.careers-modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  max-width: 800px;
+  width: 90%;
+  height: 80%;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* Close Button */
+.careers-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* Text */
+.careers-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}

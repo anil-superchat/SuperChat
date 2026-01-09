@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - SuperChat | Get in Touch</title>
-    <meta name="description" content="Contact SuperChat for demos, sales inquiries, support, or partnership opportunities. We're here to help with your enterprise AI needs.">
+    <link rel="icon" type="image/x-icon" href="./assests/super.png">
+    <meta name="description"
+        content="Contact SuperChat for demos, sales inquiries, support, or partnership opportunities. We're here to help with your enterprise AI needs.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Updated Navigation with Dropdowns -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <img src="./superchat_logo_4.png" alt="SuperChat" class="logo">
+                <img src="./assests/superchat.png" alt="SuperChat" class="logo">
             </div>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
@@ -21,23 +25,74 @@
                 <span></span>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">AI Models</a></li>
-                <li><a href="workflows.html">Workflows</a></li>
-                <li><a href="technology.html">Technology</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html" class="active btn-nav">Contact Us</a></li>
+                <!-- AI Models Dropdown -->
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-toggle">
+                        AI Models <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.html#architecture" class="section-badge">Architecture</a>
+                        <a href="index.html#ai-models" class="section-badge">All Models</a>
+                        <a href="index.html#deployment" class="section-badge">Deployment Options</a>
+                    </div>
+                </li>
+
+                <!-- Workflows Dropdown -->
+                <li class="dropdown">
+                    <a href="workflows.html" class="dropdown-toggle">
+                        Workflows <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="workflows.html#overview" class="section-badge">Overview</a>
+                        <a href="workflows.html#visual-example" class="section-badge">Visual Examples</a>
+                        <a href="workflows.html#node-library" class="section-badge">Node Library</a>
+                    </div>
+                </li>
+
+                <!-- Technology Dropdown -->
+                <li class="dropdown">
+                    <a href="technology.html" class="dropdown-toggle">
+                        Technology <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="technology.html#tech-stack" class="section-badge">Tech Stack</a>
+                        <a href="technology.html#deployment-arch" class="section-badge">Deployment Architecture</a>
+                        <a href="technology.html#on-premise" class="section-badge">On-Premise</a>
+                        <a href="technology.html#cloud-deployment" class="section-badge">Cloud Deployment</a>
+                        <a href="technology.html#apis" class="section-badge">APIs & Integrations</a>
+                        <a href="technology.html#api-reference" class="section-badge">API Reference</a>
+                        <a href="technology.html#requirements" class="section-badge">System Requirements</a>
+
+                    </div>
+                </li>
+
+                <!-- About Us Dropdown -->
+                <li class="dropdown">
+                    <a href="about.html" class="dropdown-toggle">
+                        About Us <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#team" class="section-badge">Leadership Team</a>
+                        <a href="about.html#story" class="section-badge">Our Story</a>
+                        <a href="about.html#values" class="section-badge">Core Values</a>
+                        <a href="about.html#advisors" class="section-badge">Advisory Board</a>
+                        <a href="about.html#stats" class="section-badge">Company Stats</a>
+                        <a href="about.html#careers" class="section-badge">Careers</a>
+                    </div>
+                </li>
+
+                <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
             </ul>
         </div>
     </nav>
+
 
     <!-- Hero Section -->
     <section class="hero-small">
         <div class="container">
             <div class="hero-content-center">
-                <span class="hero-badge">💬 Get in Touch</span>
-                <h1>Let's Talk About<br><span class="gradient-text">Your AI Strategy</span></h1>
                 <p class="hero-description">
-                    Whether you're ready for a demo, have questions, or want to discuss 
+                    Whether you're ready for a demo, have questions, or want to discuss
                     a custom deployment, our team is here to help.
                 </p>
             </div>
@@ -130,22 +185,10 @@
 
                         <div class="form-group">
                             <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project or inquiry..."></textarea>
+                            <textarea id="message" name="message" rows="6" required
+                                placeholder="Tell us about your project or inquiry..."></textarea>
                         </div>
 
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="newsletter" name="newsletter">
-                                <span>Send me product updates and news</span>
-                            </label>
-                        </div>
-
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="terms" name="terms" required>
-                                <span>I agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> *</span>
-                            </label>
-                        </div>
 
                         <button type="submit" class="btn btn-primary btn-large btn-full">
                             <i class="fas fa-paper-plane"></i> Send Message
@@ -166,7 +209,7 @@
                                 <div class="method-icon"><i class="fas fa-envelope"></i></div>
                                 <div class="method-details">
                                     <h4>Email</h4>
-                                    <a href="mailto:hello@superchat.ai">hello@superchat.ai</a>
+                                    <a href="mailto:hello@superchat.in">hello@superchat.in</a>
                                     <p class="method-note">General inquiries</p>
                                 </div>
                             </div>
@@ -175,7 +218,7 @@
                                 <div class="method-icon"><i class="fas fa-headset"></i></div>
                                 <div class="method-details">
                                     <h4>Support</h4>
-                                    <a href="mailto:support@superchat.ai">support@superchat.ai</a>
+                                    <a href="mailto:support@superchat.in">support@superchat.in</a>
                                     <p class="method-note">Technical assistance</p>
                                 </div>
                             </div>
@@ -184,7 +227,7 @@
                                 <div class="method-icon"><i class="fas fa-briefcase"></i></div>
                                 <div class="method-details">
                                     <h4>Sales</h4>
-                                    <a href="mailto:sales@superchat.ai">sales@superchat.ai</a>
+                                    <a href="mailto:sales@superchat.in">sales@superchat.in</a>
                                     <p class="method-note">Enterprise inquiries</p>
                                 </div>
                             </div>
@@ -202,7 +245,7 @@
                         <div class="office-hours">
                             <h4><i class="fas fa-clock"></i> Office Hours</h4>
                             <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
-                            <p>Saturday: 10:00 AM - 2:00 PM EST</p>
+                            <p>Saturday: 10:00 AM - 2:00 PM CST</p>
                             <p>Sunday: Closed</p>
                         </div>
 
@@ -222,33 +265,16 @@
 
                         <div class="office-location">
                             <h4><i class="fas fa-map-marker-alt"></i> Headquarters</h4>
-                            <p>
-                                123 AI Innovation Drive<br>
-                                Suite 500<br>
-                                San Francisco, CA 94105<br>
-                                United States
+                            <p class="hq-address">
+                                <a href="https://www.google.com/maps/search/?api=1&query=1309+Coffeen+Avenue,+STE+1200,+Sheridan,+WY+82801"
+                                    target="_blank" rel="noopener noreferrer">
+                                    1309 Coffeen Avenue, STE 1200<br />
+                                    Sheridan, WY 82801<br />
+                                    San Francisco
+                                </a>
                             </p>
                         </div>
 
-                        <div class="office-location">
-                            <h4><i class="fas fa-map-marker-alt"></i> European Office</h4>
-                            <p>
-                                45 Tech Hub Lane<br>
-                                Level 3<br>
-                                London EC2A 4NE<br>
-                                United Kingdom
-                            </p>
-                        </div>
-
-                        <div class="office-location">
-                            <h4><i class="fas fa-map-marker-alt"></i> Asia-Pacific Office</h4>
-                            <p>
-                                88 Innovation Boulevard<br>
-                                Tower B, 12th Floor<br>
-                                Singapore 018956<br>
-                                Singapore
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -259,7 +285,7 @@
     <section class="faq-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">FAQ</span>
+
                 <h2>Frequently Asked Questions</h2>
                 <p>Quick answers to common questions</p>
             </div>
@@ -271,7 +297,9 @@
                         <h4>How quickly can we get started?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>Most customers can start testing SuperChat within 24-48 hours. For browser-based deployment, it's immediate. For on-premise installations, timeline depends on your infrastructure, but typically 1-2 weeks including training.</p>
+                        <p>Most customers can start testing SuperChat within 24-48 hours. For browser-based deployment,
+                            it's immediate. For on-premise installations, timeline depends on your infrastructure, but
+                            typically 1-2 weeks including training.</p>
                     </div>
                 </div>
 
@@ -281,7 +309,9 @@
                         <h4>What deployment options are available?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>We offer browser-based (WebGPU), on-premise (your infrastructure), private cloud (AWS/Azure/GCP), and hybrid deployment models. Our team will help you choose the best option for your requirements.</p>
+                        <p>We offer browser-based (WebGPU), on-premise (your infrastructure), private cloud
+                            (AWS/Azure/GCP), and hybrid deployment models. Our team will help you choose the best option
+                            for your requirements.</p>
                     </div>
                 </div>
 
@@ -291,7 +321,9 @@
                         <h4>Do you offer technical support?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! All enterprise customers receive dedicated technical support, including onboarding, training, and ongoing assistance. We offer email, phone, and Slack channel support based on your plan.</p>
+                        <p>Yes! All enterprise customers receive dedicated technical support, including onboarding,
+                            training, and ongoing assistance. We offer email, phone, and Slack channel support based on
+                            your plan.</p>
                     </div>
                 </div>
 
@@ -301,7 +333,8 @@
                         <h4>Is there a free trial available?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, we offer a 14-day free trial for the browser-based version with access to all models except GOD MODE. For enterprise trials with full features, contact our sales team.</p>
+                        <p>Yes, we offer a 14-day free trial for the browser-based version with access to all models
+                            except GOD MODE. For enterprise trials with full features, contact our sales team.</p>
                     </div>
                 </div>
 
@@ -311,7 +344,9 @@
                         <h4>What about data security and privacy?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>SuperChat is designed with privacy first. On-premise deployments ensure zero external data transfer. We're GDPR, HIPAA, and SOC 2 compliant. Your data never leaves your infrastructure.</p>
+                        <p>SuperChat is designed with privacy first. On-premise deployments ensure zero external data
+                            transfer. We're GDPR, HIPAA, and SOC 2 compliant. Your data never leaves your
+                            infrastructure.</p>
                     </div>
                 </div>
 
@@ -321,7 +356,9 @@
                         <h4>Can I integrate with our existing systems?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely! SuperChat includes 55+ workflow nodes for integrations including databases, cloud storage, email, APIs, and more. We also offer custom integration development for enterprise customers.</p>
+                        <p>Absolutely! SuperChat includes 55+ workflow nodes for integrations including databases, cloud
+                            storage, email, APIs, and more. We also offer custom integration development for enterprise
+                            customers.</p>
                     </div>
                 </div>
             </div>
@@ -332,13 +369,16 @@
     <section class="map-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Find Us</span>
+
                 <h2>Our Headquarters</h2>
             </div>
             <div class="map-placeholder">
                 <i class="fas fa-map-marked-alt"></i>
                 <p>Map: 123 AI Innovation Drive, San Francisco, CA 94105</p>
-                <a href="https://maps.google.com" target="_blank" class="btn btn-secondary">Open in Google Maps</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=1309+Coffeen+Avenue,+STE+1200,+Sheridan,+WY+82801"
+                    target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    Open in Google Maps
+                </a>
             </div>
         </div>
     </section>
@@ -357,12 +397,35 @@
         </div>
     </section>
 
+
+
+    <!-- Floating Chat Button -->
+    <div id="chatbot-toggle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="chatbot-overlay">
+        <div id="chatbot-modal">
+            <button id="chatbot-close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <iframe src="./chatbot.html" frameborder="0" id="chatbot-iframe"></iframe>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="./chatboat-widget.css">
+    <script src="./chatboat-widget.js"></script>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="./superchat_logo_4.png" alt="SuperChat" class="footer-logo">
+                    <img src="./assests/superchatB.png" alt="SuperChat" class="footer-logo">
                     <p class="footer-tagline">Enterprise AI Solutions</p>
                     <p>Powerful on-premise AI models for businesses that value privacy and control.</p>
                 </div>
@@ -397,14 +460,25 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 SuperChat LLC. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Security</a>
+                    <a href="#" data-modal="privacy">Privacy Policy</a>
+                    <a href="#" data-modal="terms">Terms of Service</a>
+                    <a href="#" data-modal="security">Security</a>
                 </div>
             </div>
+
+            <!-- Reusable Modal -->
+            <div class="modal-overlay" id="infoModal">
+                <div class="modal">
+                    <button class="modal-close">&times;</button>
+                    <h2 id="modalTitle"></h2>
+                    <div id="modalContent"></div>
+                </div>
+            </div>
+
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

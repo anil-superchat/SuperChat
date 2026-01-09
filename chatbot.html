@@ -1,0 +1,885 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayG - Chat with Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .chat-bubble {
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .typing-indicator {
+            display: inline-flex;
+            gap: 4px;
+            padding: 12px;
+        }
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #6B7280;
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out;
+        }
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen">
+    
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl px-6 py-3 mb-4">
+                <i class="fas fa-headset text-2xl"></i>
+            </div>
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">Welcome to PayG Support</h1>
+            <p class="text-gray-600">How can we help you today?</p>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            
+            <!-- Chat Header -->
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">PayG Assistant</h3>
+                            <p class="text-xs text-white/80 flex items-center gap-1">
+                                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+                                Online
+                            </p>
+                        </div>
+                    </div>
+                    <button onclick="clearChat()" class="text-white/80 hover:text-white">
+                        <i class="fas fa-redo-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div id="chatMessages" class="h-[500px] overflow-y-auto p-6 space-y-4 bg-gray-50">
+                <!-- Messages will be added here -->
+            </div>
+
+            <!-- Chat Input -->
+            <div id="chatInput" class="p-4 bg-white border-t border-gray-200">
+                <!-- Input will be dynamically generated based on state -->
+            </div>
+
+        </div>
+
+        <!-- Powered By -->
+        <div class="text-center mt-4 text-sm text-gray-500">
+            Powered by <span class="font-semibold text-blue-600">PayG CRM</span>
+        </div>
+
+    </div>
+
+    <script>
+        // Chat state management
+        let chatState = {
+            stage: 'welcome',
+            formData: {
+                name: '',
+                mobile: '',
+                email: '',
+                businessName: '',
+                website: '',
+                requestType: ''
+            },
+            otpData: {
+                mobileOTP: '',
+                emailOTP: '',
+                mobileVerified: false,
+                emailVerified: false
+            },
+            sessionId: 'session_' + Date.now()
+        };
+
+        // Initialize chat
+        document.addEventListener('DOMContentLoaded', () => {
+            startChat();
+        });
+
+        function startChat() {
+            addBotMessage("👋 Hello! Welcome to PayG Digitals!");
+            setTimeout(() => {
+                addBotMessage("We're here to help you with all your business payment solutions and services.");
+                setTimeout(() => {
+                    askInterest();
+                }, 1500);
+            }, 1000);
+        }
+
+        function askInterest() {
+            addBotMessage("Are you interested in learning more about PayG's business services?");
+            showQuickReplies([
+                { text: 'Yes, I am interested', action: 'interested' },
+                { text: 'Just browsing', action: 'browsing' }
+            ]);
+        }
+
+        function handleInterest(interested) {
+            if (interested) {
+                addUserMessage("Yes, I am interested");
+                chatState.stage = 'form';
+                setTimeout(() => {
+                    addBotMessage("Excellent! I'd be happy to assist you. Let me collect some information to better serve you.");
+                    setTimeout(() => {
+                        showNameInput();
+                    }, 1000);
+                }, 500);
+            } else {
+                addUserMessage("Just browsing");
+                setTimeout(() => {
+                    addBotMessage("No problem! Feel free to explore our website. If you need any help, I'm here for you! 😊");
+                    setTimeout(() => {
+                        showQuickReplies([
+                            { text: 'Actually, I need help', action: 'interested' }
+                        ]);
+                    }, 1000);
+                }, 500);
+            }
+        }
+
+        function showNameInput() {
+            const inputHTML = `
+                <div class="space-y-3">
+                    <label class="block text-sm font-medium text-gray-700">What's your name?</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="nameInput" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your name" />
+                        <button onclick="submitName()" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('chatInput').innerHTML = inputHTML;
+            document.getElementById('nameInput').focus();
+            document.getElementById('nameInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') submitName();
+            });
+        }
+
+        function submitName() {
+            const name = document.getElementById('nameInput').value.trim();
+            if (!name) {
+                alert('Please enter your name');
+                return;
+            }
+            chatState.formData.name = name;
+            addUserMessage(name);
+            setTimeout(() => {
+                addBotMessage(`Nice to meet you, ${name}! 👋`);
+                setTimeout(() => {
+                    showMobileInput();
+                }, 1000);
+            }, 500);
+        }
+
+        function showMobileInput() {
+            const inputHTML = `
+                <div class="space-y-3">
+                    <label class="block text-sm font-medium text-gray-700">What's your mobile number?</label>
+                    <div class="flex gap-2">
+                        <input type="tel" id="mobileInput" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="+91 XXXXX XXXXX" maxlength="15" />
+                        <button onclick="submitMobile()" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            Send OTP
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-500">We'll send you a verification code</p>
+                </div>
+            `;
+            document.getElementById('chatInput').innerHTML = inputHTML;
+            document.getElementById('mobileInput').focus();
+        }
+
+        async function submitMobile() {
+            const mobile = document.getElementById('mobileInput').value.trim();
+            if (!mobile || mobile.length < 10) {
+                alert('Please enter a valid mobile number');
+                return;
+            }
+            chatState.formData.mobile = mobile;
+            addUserMessage(mobile);
+            
+            setTimeout(() => {
+                addBotMessage(`📱 We've sent a verification code to ${mobile}`);
+                setTimeout(() => {
+                    showMobileOTPInput();
+                }, 1000);
+            }, 500);
+        }
+
+        function showMobileOTPInput() {
+            const inputHTML = `
+                <div class="space-y-3">
+                    <label class="block text-sm font-medium text-gray-700">Enter the 6-digit OTP sent to your mobile</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="mobileOTPInput" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="000000" maxlength="6" />
+                        <button onclick="verifyMobileOTP()" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                            Verify
+                        </button>
+                    </div>
+                    <button onclick="resendMobileOTP()" class="text-sm text-blue-600 hover:underline">Resend OTP</button>
+                </div>
+            `;
+            document.getElementById('chatInput').innerHTML = inputHTML;
+            document.getElementById('mobileOTPInput').focus();
+        }
+
+        function verifyMobileOTP() {
+            const otp = document.getElementById('mobileOTPInput').value.trim();
+            if (otp.length !== 6) {
+                alert('Please enter a valid 6-digit OTP');
+                return;
+            }
+            
+            chatState.otpData.mobileOTP = otp;
+            chatState.otpData.mobileVerified = true;
+            
+            addUserMessage(`✓ OTP Verified`);
+            setTimeout(() => {
+                addBotMessage("✅ Mobile number verified successfully!");
+                setTimeout(() => {
+                    showEmailInput();
+                }, 1000);
+            }, 500);
+        }
+
+        function resendMobileOTP() {
+            addBotMessage(`📱 New OTP sent to ${chatState.formData.mobile}`);
+        }
+
+        function showEmailInput() {
+            const inputHTML = `
+                <div class="space-y-3">
+                    <label class="block text-sm font-medium text-gray-700">What's your email address?</label>
+                    <div class="flex gap-2">
+                        <input type="email" id="emailInput" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="your@email.com" />
+                        <button onclick="submitEmail()" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            Send OTP
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-500">We'll send you a verification code</p>
+                </div>
+            `;
+            document.getElementById('chatInput').innerHTML = inputHTML;
+            document.getElementById('emailInput').focus();
+        }
+
+        // async function submitEmail() {
+        //     const email = document.getElementById('emailInput').value.trim();
+        //     if (!email || !email.includes('@')) {
+        //         alert('Please enter a valid email address');
+        //         return;
+        //     }
+        //     chatState.formData.email = email;
+        //     addUserMessage(email);
+            
+        //     setTimeout(() => {
+        //         addBotMessage(`📧 We've sent a verification code to ${email}`);
+        //         setTimeout(() => {
+        //             showEmailOTPInput();
+        //         }, 1000);
+        //     }, 500);
+       // }
+
+       async function submitEmail() {
+    const email = document.getElementById('emailInput').value.trim();
+
+    if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address');
+        return;
+    }
+
+    chatState.formData.email = email;
+    addUserMessage(email);
+
+    try {
+         console.log('📡 Sending OTP request...', email);
+        const res = await fetch('/payg/api.php/api/email-otp/send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include', // 🔥 REQUIRED FOR SESSION
+            body: JSON.stringify({ email })
+        });
+       console.log('📥 Raw response:', res);
+        const result = await res.json();
+
+        if (!result.success) {
+            throw new Error(result.message || 'OTP send failed');
+        }
+
+        addBotMessage(`📧 Verification code sent to ${email}`);
+        showEmailOTPInput();
+
+    } catch (err) {
+        console.error(err);
+        addBotMessage('❌ Failed to send OTP. Please try again.');
+    }
+}
+
+
+        function showEmailOTPInput() {
+            const inputHTML = `
+                <div class="space-y-3">
+                    <label class="block text-sm font-medium text-gray-700">Enter the 6-digit OTP sent to your email</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="emailOTPInput" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="000000" maxlength="6" />
+                        <button onclick="verifyEmailOTP()" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                            Verify
+                        </button>
+                    </div>
+                    <button onclick="resendEmailOTP()" class="text-sm text-blue-600 hover:underline">Resend OTP</button>
+                </div>
+            `;
+            document.getElementById('chatInput').innerHTML = inputHTML;
+            document.getElementById('emailOTPInput').focus();
+        }
+
+        // function verifyEmailOTP() {
+        //     const otp = document.getElementById('emailOTPInput').value.trim();
+        //     if (otp.length !== 6) {
+        //         alert('Please enter a valid 6-digit OTP');
+        //         return;
+        //     }
+            
+        //     chatState.otpData.emailOTP = otp;
+        //     chatState.otpData.emailVerified = true;
+            
+        //     addUserMessage(`✓ OTP Verified`);
+        //     setTimeout(() => {
+        //         addBotMessage("✅ Email verified successfully!");
+        //         setTimeout(() => {
+        //             showBusinessNameInput();
+        //         }, 1000);
+        //     }, 500);
+        // }
+
+
+
+//     async function verifyEmailOTP() {
+//     const otp = document.getElementById('emailOTPInput').value.trim();
+//     const email = chatState.formData.email;
+
+//     if (otp.length !== 6) {
+//         alert('Please enter a valid 6-digit OTP');
+//         return;
+//     }
+
+//     try {
+//         const res = await fetch('/payg/api.php/api/email-otp/verify', {
+//             method: 'POST',
+//             headers: { 'Content-Type': 'application/json' },
+//             credentials: 'include', // 🔥 REQUIRED
+//             body: JSON.stringify({ email, otp })
+//         });
+
+//         const result = await res.json();
+
+//         if (!result.success) {
+//             throw new Error(result.message || 'OTP verification failed');
+//         }
+
+//         chatState.otpData.emailVerified = true;
+//         addUserMessage('✓ OTP Verified');
+
+//         const clientRes = await fetch(
+//             `/payg/api.php/api/clients?email=${encodeURIComponent(email)}`,
+//             {
+//                 method: 'GET',
+//                 credentials: 'include'
+//             }
+//         );
+         
+
+//         addBotMessage('✅ Email verified successfully!');
+        
+//         alert('⚠️ after GET API');
+//         const clientResult = await clientRes.json();
+
+//         // 3️⃣ CLIENT EXISTS → JUST SHOW POPUP (NO STOP)
+//         if (clientResult.exists) {
+//             alert('⚠️ Account already exists. You may login or continue.');
+//         }
+        
+//         showBusinessNameInput(document.getElementById(''));
+
+//     } catch (err) {
+//         console.error(err);
+//         addBotMessage('❌ Invalid or expired OTP. Please try again.');
+//     }
+// }
+
+   async function verifyEmailOTP() {
+    console.log('🚀 verifyEmailOTP started');
+
+    const otp = document.getElementById('emailOTPInput').value.trim();
+    const email = chatState.formData.email;
+
+    console.log('📨 Email:', email);
+    console.log('🔢 OTP:', otp);
+
+    if (otp.length !== 6) {
+        console.warn('❌ OTP length invalid');
+        alert('Please enter a valid 6-digit OTP');
+        return;
+    }
+
+    try {
+        // 1️⃣ VERIFY OTP
+        console.log('➡️ Sending OTP verify request');
+
+        const otpRes = await fetch('/payg/api.php/api/email-otp/verify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ email, otp })
+        });
+
+        console.log('⬅️ OTP response status:', otpRes.status);
+
+        const otpText = await otpRes.text();
+        console.log('📄 OTP raw response:', otpText);
+
+        const otpResult = JSON.parse(otpText);
+
+        console.log('✅ OTP parsed JSON:', otpResult);
+
+        if (!otpResult.success) {
+            console.error('❌ OTP verification failed:', otpResult.message);
+            throw new Error(otpResult.message || 'OTP verification failed');
+        }
+
+        chatState.otpData.emailVerified = true;
+        addUserMessage('✓ OTP Verified');
+        console.log('✔ OTP verification complete');
+
+        // 2️⃣ CHECK CLIENT EXISTS
+        console.log('➡️ Sending client existence check');
+
+        const clientRes = await fetch(
+            `/payg/api.php/api/clients/get?email=${encodeURIComponent(email)}`,
+            { method: 'GET', credentials: 'include' }
+        );
+
+        console.log('⬅️ Client API status:', clientRes.status);
+
+        const clientText = await clientRes.text();
+        console.log('📄 Client raw response:', clientText);
+
+        if (!clientRes.ok) {
+            console.error('❌ Client API HTTP error');
+            throw new Error('Client API failed');
+        }
+
+        const clientResult = JSON.parse(clientText);
+        console.log('✅ Client parsed JSON:', clientResult);
+
+        // 3️⃣ CLIENT EXISTS
+        if (clientResult.exists) {
+            console.log('🟢 CLIENT FOUND:', clientResult.client);
+            
+
+            localStorage.setItem(
+        'user',
+        JSON.stringify({
+            role: 'client',
+            client: clientResult.client,
+            name: clientResult.client.customer_name,
+            email: clientResult.client.customer_email
+        })
+    );
+
+
+            addBotMessage(
+                `✅ Client already exists\n` +
+                `Name: ${clientResult.client.customer_name}\n` +
+                `Company: ${clientResult.client.company_name ?? 'N/A'}`
+            );
+
+            setTimeout(() => {
+        window.location.href = '/payg/dashboard-client.php';
+    }, 500);
+
+            console.log('⛔ Signup flow stopped');
+            return;
+        }
+
+        // 4️⃣ NEW CLIENT
+        console.log('🆕 Client NOT found, continuing signup');
+        addBotMessage('✅ Email verified successfully!');
+        showBusinessNameInput();
+
+    } catch (err) {
+        console.error('🔥 VERIFY FLOW ERROR:', err);
+        addBotMessage('❌ Something went wrong. Please try again.');
+    }
+}
+
+
+
+
+
+        function resendEmailOTP() {
+            addBotMessage(`📧 New OTP sent to ${chatState.formData.email}`);
+        }
+
+        function showBusinessNameInput() {
+            const inputHTML = `
+                <div class="space-y-3">
+                    <label class="block text-sm font-medium text-gray-700">What's your Business/Company name?</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="businessInput" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your business name" />
+                        <button onclick="submitBusiness()" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('chatInput').innerHTML = inputHTML;
+            document.getElementById('businessInput').focus();
+        }
+
+        function submitBusiness() {
+            const business = document.getElementById('businessInput').value.trim();
+            if (!business) {
+                alert('Please enter your business name');
+                return;
+            }
+            chatState.formData.businessName = business;
+            addUserMessage(business);
+            setTimeout(() => {
+                showWebsiteInput();
+            }, 500);
+        }
+
+        function showWebsiteInput() {
+            const inputHTML = `
+                <div class="space-y-3">
+                    <label class="block text-sm font-medium text-gray-700">Business or Company Website (Optional)</label>
+                    <div class="flex gap-2">
+                        <input type="url" id="websiteInput" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="https://yourwebsite.com" />
+                        <button onclick="submitWebsite()" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <button onclick="skipWebsite()" class="text-sm text-gray-600 hover:underline">Skip this step</button>
+                </div>
+            `;
+            document.getElementById('chatInput').innerHTML = inputHTML;
+            document.getElementById('websiteInput').focus();
+        }
+
+        function submitWebsite() {
+            const website = document.getElementById('websiteInput').value.trim();
+            chatState.formData.website = website;
+            if (website) {
+                addUserMessage(website);
+            }
+            proceedToRequestType();
+        }
+
+        function skipWebsite() {
+            addUserMessage("(Skipped)");
+            proceedToRequestType();
+        }
+
+        function proceedToRequestType() {
+            setTimeout(() => {
+                addBotMessage("Great! Now, how may I assist you today?");
+                setTimeout(() => {
+                    showRequestTypeOptions();
+                }, 1000);
+            }, 500);
+        }
+
+        function showRequestTypeOptions() {
+            showQuickReplies([
+                { text: '💼 Sales Enquiry', action: 'sales' },
+                { text: '🛠️ Service Related', action: 'service' },
+                { text: '💳 Transaction Related', action: 'transaction' },
+                { text: '📞 Request a Call Back', action: 'callback' }
+            ]);
+        }
+
+        function handleRequestType(type) {
+            const typeLabels = {
+                'sales': 'Sales Enquiry',
+                'service': 'Service Related',
+                'transaction': 'Transaction Related',
+                'callback': 'Request a Call Back'
+            };
+            
+            chatState.formData.requestType = type;
+            addUserMessage(typeLabels[type]);
+            
+            showTypingIndicator();
+            
+            setTimeout(async () => {
+                hideTypingIndicator();
+                await createTicket(type);
+            }, 2000);
+        }
+        
+        
+async function createClientIfNotExists() {
+    const payload = {
+        customer_name: chatState.formData.name,
+        customer_mobile: chatState.formData.mobile,
+        customer_email: chatState.formData.email,
+        company_name: chatState.formData.businessName,
+        address: null
+    };
+
+    console.log('📤 Client create payload:', payload);
+
+    const res = await fetch('/payg/api.php/api/clients/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(payload)
+    });
+
+    const text = await res.text();
+    console.log('📥 Client API response:', text);
+
+    if (!res.ok) {
+        throw new Error('Client API failed');
+    }
+
+    const data = JSON.parse(text);
+
+    if (!data.success) {
+        throw new Error(data.message || 'Client creation failed');
+    }
+
+    return data.client; // must include id
+}
+        async function createTicket(requestType) {
+            try {
+                const teams = {
+                    sales: { name: 'Sales Team', sla: '24 to 48 hours' },
+                    service: { name: 'Service Team', sla: '12 to 24 hours' },
+                    transaction: { name: 'Transaction Support Team', sla: '24 to 48 hours' },
+                    callback: { name: 'Customer Relations Team', sla: '4 to 8 hours' }
+                };
+
+                const payload = {
+                    name: chatState.formData.name,
+                    number: chatState.formData.mobile,
+                    email: chatState.formData.email,
+                    business: chatState.formData.businessName,
+                    company_url: chatState.formData.website,
+                    assist_type: requestType,
+                    channel: 'web_lead'
+                };
+
+                const response = await fetch('api/tickets.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (!result.success) {
+                    throw new Error(result.error || 'Ticket creation failed');
+                }
+
+                const team = teams[requestType];
+
+                addBotMessage("✅ Thank you for sharing your details!");
+
+                setTimeout(() => {
+                    addBotMessage(
+                        `🎫 Your ticket <strong>#${result.ticketNumber}</strong> has been created.<br>
+                        It has been assigned to our <strong>${team.name}</strong>.<br>
+                        Expected response time: <strong>${team.sla}</strong>.`
+                    );
+
+                    setTimeout(() => {
+                        addBotMessage("Is there anything else I can help you with?");
+                        showFinalOptions();
+                    }, 1200);
+
+                }, 800);
+
+            } catch (error) {
+                console.error(error);
+                addBotMessage(
+                    "❌ Sorry, we couldn't submit your request right now. Please try again later or contact support@payg.in"
+                );
+            }
+        }
+
+        function showFinalOptions() {
+            showQuickReplies([
+                { text: 'Submit another request', action: 'restart' },
+                { text: "No, that's all", action: 'end' }
+            ]);
+        }
+
+        function handleFinalAction(action) {
+            if (action === 'restart') {
+                addUserMessage("Submit another request");
+                clearChatState();
+                setTimeout(() => {
+                    showRequestTypeOptions();
+                }, 1000);
+            } else {
+                addUserMessage("No, that's all");
+                setTimeout(() => {
+                    addBotMessage("Thank you for contacting PayG! We'll be in touch soon. Have a great day! 😊");
+                    document.getElementById('chatInput').innerHTML = `
+                        <div class="text-center">
+                            <button onclick="clearChat()" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                Start New Conversation
+                            </button>
+                        </div>
+                    `;
+                }, 1000);
+            }
+        }
+
+        // UI Helper Functions
+        function addBotMessage(text) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex items-start gap-3 chat-bubble';
+            messageDiv.innerHTML = `
+                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-robot text-blue-600 text-sm"></i>
+                </div>
+                <div class="bg-white rounded-2xl rounded-tl-none px-4 py-3 shadow-sm max-w-[80%]">
+                    <p class="text-gray-800 text-sm">${text}</p>
+                </div>
+            `;
+            messagesDiv.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        function addUserMessage(text) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex items-start gap-3 justify-end chat-bubble';
+            messageDiv.innerHTML = `
+                <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl rounded-tr-none px-4 py-3 shadow-sm max-w-[80%]">
+                    <p class="text-sm">${text}</p>
+                </div>
+                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-user text-purple-600 text-sm"></i>
+                </div>
+            `;
+            messagesDiv.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        function showQuickReplies(options) {
+            const quickRepliesHTML = options.map(opt => 
+                `<button onclick="handleQuickReply('${opt.action}')" class="px-4 py-2 bg-white border border-gray-300 rounded-full hover:bg-blue-50 hover:border-blue-500 transition-colors text-sm">
+                    ${opt.text}
+                </button>`
+            ).join('');
+            
+            document.getElementById('chatInput').innerHTML = `
+                <div class="flex flex-wrap gap-2">
+                    ${quickRepliesHTML}
+                </div>
+            `;
+        }
+
+        function handleQuickReply(action) {
+            if (action === 'interested' || action === 'browsing') {
+                handleInterest(action === 'interested');
+            } else if (['sales', 'service', 'transaction', 'callback'].includes(action)) {
+                handleRequestType(action);
+            } else if (action === 'restart' || action === 'end') {
+                handleFinalAction(action);
+            }
+        }
+
+        function showTypingIndicator() {
+            const messagesDiv = document.getElementById('chatMessages');
+            const typingDiv = document.createElement('div');
+            typingDiv.id = 'typingIndicator';
+            typingDiv.className = 'flex items-start gap-3';
+            typingDiv.innerHTML = `
+                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-robot text-blue-600 text-sm"></i>
+                </div>
+                <div class="bg-white rounded-2xl rounded-tl-none px-2 py-1 shadow-sm">
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            `;
+            messagesDiv.appendChild(typingDiv);
+            scrollToBottom();
+        }
+
+        function hideTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) indicator.remove();
+        }
+
+        function scrollToBottom() {
+            const messagesDiv = document.getElementById('chatMessages');
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function clearChatState() {
+            chatState.formData = {
+                name: chatState.formData.name,
+                mobile: chatState.formData.mobile,
+                email: chatState.formData.email,
+                businessName: chatState.formData.businessName,
+                website: chatState.formData.website,
+                requestType: ''
+            };
+        }
+
+        function clearChat() {
+            if (confirm('Are you sure you want to start a new conversation?')) {
+                document.getElementById('chatMessages').innerHTML = '';
+                document.getElementById('chatInput').innerHTML = '';
+                chatState = {
+                    stage: 'welcome',
+                    formData: { name: '', mobile: '', email: '', businessName: '', website: '', requestType: '' },
+                    otpData: { mobileOTP: '', emailOTP: '', mobileVerified: false, emailVerified: false },
+                    sessionId: 'session_' + Date.now()
+                };
+                startChat();
+            }
+        }
+    </script>
+
+<!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7fef7544b2874895895dc8cd91aff07f","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script> -->
+</body>
+</html>

@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workflow Builder - SuperChat | 55+ Automation Nodes</title>
-    <meta name="description" content="Build powerful automation workflows with 55+ nodes across 12 categories. Visual workflow builder for enterprise AI automation.">
+    <link rel="icon" type="image/x-icon" href="./assests/super.png">
+    <meta name="description"
+        content="Build powerful automation workflows with 55+ nodes across 12 categories. Visual workflow builder for enterprise AI automation.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Updated Navigation with Dropdowns -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <img src="./superchat_logo_4.png" alt="SuperChat" class="logo">
+                <img src="./assests/superchat.png" alt="SuperChat" class="logo">
             </div>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
@@ -21,10 +25,61 @@
                 <span></span>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">AI Models</a></li>
-                <li><a href="workflows.html" class="active">Workflows</a></li>
-                <li><a href="technology.html">Technology</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <!-- AI Models Dropdown -->
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-toggle">
+                        AI Models <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.html#architecture" class="section-badge">Architecture</a>
+                        <a href="index.html#ai-models" class="section-badge">All Models</a>
+                        <a href="index.html#deployment" class="section-badge">Deployment Options</a>
+                    </div>
+                </li>
+
+                <!-- Workflows Dropdown -->
+                <li class="dropdown">
+                    <a href="workflows.html" class="dropdown-toggle">
+                        Workflows <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="workflows.html#workflow-visual" class="section-badge">Visual Examples</a>
+                        <a href="workflows.html#node-categories" class="section-badge">Node Library</a>
+                    </div>
+                </li>
+
+                <!-- Technology Dropdown -->
+                <li class="dropdown">
+                    <a href="technology.html" class="dropdown-toggle ">
+                        Technology <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="technology.html#tech-stack" class="section-badge">Tech Stack</a>
+                        <a href="technology.html#deployment-arch" class="section-badge">Deployment Architecture</a>
+                        <a href="technology.html#on-premise" class="section-badge">On-Premise</a>
+                        <a href="technology.html#cloud-deployment" class="section-badge">Cloud Deployment</a>
+                        <a href="technology.html#apis" class="section-badge">APIs & Integrations</a>
+                        <a href="technology.html#api-reference" class="section-badge">API Reference</a>
+                        <a href="technology.html#requirements" class="section-badge">System Requirements</a>
+
+                    </div>
+                </li>
+
+                <!-- About Us Dropdown -->
+                <li class="dropdown">
+                    <a href="about.html" class="dropdown-toggle">
+                        About Us <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#team" class="section-badge">Leadership Team</a>
+                        <a href="about.html#story" class="section-badge">Our Story</a>
+                        <a href="about.html#values" class="section-badge">Core Values</a>
+                        <a href="about.html#advisors" class="section-badge">Advisory Board</a>
+                        <a href="about.html#stats" class="section-badge">Company Stats</a>
+                        <a href="about.html#careers" class="section-badge">Careers</a>
+                    </div>
+                </li>
+
                 <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
             </ul>
         </div>
@@ -34,49 +89,19 @@
     <section class="hero-small">
         <div class="container">
             <div class="hero-content-center">
-                <span class="hero-badge">🔧 Workflow Automation</span>
-                <h1>Build Powerful Workflows<br>with <span class="gradient-text">55+ Nodes</span></h1>
                 <p class="hero-description">
-                    Visual workflow builder with drag-and-drop nodes. Create complex automation 
+                    Visual workflow builder with drag-and-drop nodes. Create complex automation
                     pipelines without writing code. Connect AI models, APIs, databases, and more.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Workflow Overview -->
-    <section class="workflow-overview">
-        <div class="container">
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <i class="fas fa-cubes"></i>
-                    <h3>55+ Nodes</h3>
-                    <p>Comprehensive node library across 12 categories</p>
-                </div>
-                <div class="overview-card">
-                    <i class="fas fa-project-diagram"></i>
-                    <h3>Visual Builder</h3>
-                    <p>Drag-and-drop interface, no coding required</p>
-                </div>
-                <div class="overview-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Real-Time Execution</h3>
-                    <p>Execute workflows instantly or schedule them</p>
-                </div>
-                <div class="overview-card">
-                    <i class="fas fa-link"></i>
-                    <h3>Smart Connections</h3>
-                    <p>Connect nodes with visual port-based linking</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Visual Workflow Example -->
-    <section class="workflow-visual">
+    <section class="workflow-visual" id="workflow-visual">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Example</span>
+
                 <h2>How Workflows Work</h2>
                 <p>Visual representation of a typical automation workflow</p>
             </div>
@@ -162,16 +187,17 @@
             </div>
 
             <div class="workflow-caption">
-                <p><strong>Three Real-World Examples:</strong> Document analysis pipeline, email automation with AI classification, scheduled data sync from cloud storage.</p>
+                <p><strong>Three Real-World Examples:</strong> Document analysis pipeline, email automation with AI
+                    classification, scheduled data sync from cloud storage.</p>
             </div>
         </div>
     </section>
 
     <!-- Node Categories -->
-    <section class="node-categories">
+    <section class="node-categories" id="node-categories">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Node Library</span>
+
                 <h2>55+ Nodes Across 12 Categories</h2>
                 <p>Complete toolkit for building any automation workflow</p>
             </div>
@@ -204,7 +230,8 @@
                                 <span class="node-type">INPUT</span>
                             </div>
                         </div>
-                        <p class="node-description">Upload and read files from local system. Supports all document formats including PDF, Excel, Word, text files, and images.</p>
+                        <p class="node-description">Upload and read files from local system. Supports all document
+                            formats including PDF, Excel, Word, text files, and images.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Outputs:</strong> File content, metadata, file path
@@ -223,7 +250,8 @@
                                 <span class="node-type">INPUT</span>
                             </div>
                         </div>
-                        <p class="node-description">Direct text entry for workflow inputs. Supports plain text, formatted text, and multi-line input with variable substitution.</p>
+                        <p class="node-description">Direct text entry for workflow inputs. Supports plain text,
+                            formatted text, and multi-line input with variable substitution.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Outputs:</strong> Text content, character count
@@ -242,7 +270,8 @@
                                 <span class="node-type">INPUT</span>
                             </div>
                         </div>
-                        <p class="node-description">Fetch content from URLs and APIs. Supports HTTP/HTTPS, authentication, headers, and automatic content type detection.</p>
+                        <p class="node-description">Fetch content from URLs and APIs. Supports HTTP/HTTPS,
+                            authentication, headers, and automatic content type detection.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Outputs:</strong> URL content, response headers, status code
@@ -261,7 +290,8 @@
                                 <span class="node-type">INPUT</span>
                             </div>
                         </div>
-                        <p class="node-description">Trigger workflows via HTTP webhooks. Receive POST requests from external services and start workflow execution automatically.</p>
+                        <p class="node-description">Trigger workflows via HTTP webhooks. Receive POST requests from
+                            external services and start workflow execution automatically.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Outputs:</strong> Webhook payload, headers, sender info
@@ -280,7 +310,8 @@
                                 <span class="node-type">INPUT</span>
                             </div>
                         </div>
-                        <p class="node-description">Time-based workflow triggers. Schedule executions hourly, daily, weekly, or monthly with cron-like syntax support.</p>
+                        <p class="node-description">Time-based workflow triggers. Schedule executions hourly, daily,
+                            weekly, or monthly with cron-like syntax support.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Outputs:</strong> Execution time, schedule info
@@ -302,7 +333,8 @@
                                 <span class="node-type">CLOUD</span>
                             </div>
                         </div>
-                        <p class="node-description">Read files from Google Drive. Supports shared drives, file search, and automatic authentication via OAuth.</p>
+                        <p class="node-description">Read files from Google Drive. Supports shared drives, file search,
+                            and automatic authentication via OAuth.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> File ID or search query<br>
@@ -322,7 +354,8 @@
                                 <span class="node-type">CLOUD</span>
                             </div>
                         </div>
-                        <p class="node-description">Write files to Google Drive. Create new files or update existing ones with automatic version control.</p>
+                        <p class="node-description">Write files to Google Drive. Create new files or update existing
+                            ones with automatic version control.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> File content, destination path<br>
@@ -342,7 +375,8 @@
                                 <span class="node-type">CLOUD</span>
                             </div>
                         </div>
-                        <p class="node-description">List files and folders in Google Drive. Filter by type, date, or search query. Supports pagination.</p>
+                        <p class="node-description">List files and folders in Google Drive. Filter by type, date, or
+                            search query. Supports pagination.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Folder ID, filters<br>
@@ -362,7 +396,8 @@
                                 <span class="node-type">CLOUD</span>
                             </div>
                         </div>
-                        <p class="node-description">Read files from Microsoft OneDrive. Supports personal and business accounts with Microsoft Graph API.</p>
+                        <p class="node-description">Read files from Microsoft OneDrive. Supports personal and business
+                            accounts with Microsoft Graph API.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> File path or ID<br>
@@ -382,7 +417,8 @@
                                 <span class="node-type">CLOUD</span>
                             </div>
                         </div>
-                        <p class="node-description">Write files to Microsoft OneDrive. Create or update files with automatic conflict resolution.</p>
+                        <p class="node-description">Write files to Microsoft OneDrive. Create or update files with
+                            automatic conflict resolution.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> File content, destination<br>
@@ -402,7 +438,8 @@
                                 <span class="node-type">CLOUD</span>
                             </div>
                         </div>
-                        <p class="node-description">Read files from Dropbox. Supports shared folders and file versioning with Dropbox API v2.</p>
+                        <p class="node-description">Read files from Dropbox. Supports shared folders and file versioning
+                            with Dropbox API v2.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> File path<br>
@@ -422,7 +459,8 @@
                                 <span class="node-type">CLOUD</span>
                             </div>
                         </div>
-                        <p class="node-description">Write files to Dropbox. Automatic folder creation and conflict handling with version history.</p>
+                        <p class="node-description">Write files to Dropbox. Automatic folder creation and conflict
+                            handling with version history.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> File content, path<br>
@@ -445,7 +483,8 @@
                                 <span class="node-type">EMAIL</span>
                             </div>
                         </div>
-                        <p class="node-description">Read emails from Gmail. Filter by sender, subject, date, or labels. Supports attachments and threading.</p>
+                        <p class="node-description">Read emails from Gmail. Filter by sender, subject, date, or labels.
+                            Supports attachments and threading.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Search filters, count<br>
@@ -465,7 +504,8 @@
                                 <span class="node-type">EMAIL</span>
                             </div>
                         </div>
-                        <p class="node-description">Send emails via Gmail. Supports HTML templates, attachments, CC/BCC, and scheduling with Gmail API.</p>
+                        <p class="node-description">Send emails via Gmail. Supports HTML templates, attachments, CC/BCC,
+                            and scheduling with Gmail API.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> To, subject, body, attachments<br>
@@ -485,7 +525,8 @@
                                 <span class="node-type">EMAIL</span>
                             </div>
                         </div>
-                        <p class="node-description">Read emails from Microsoft Outlook/Exchange. Filter, search, and extract email data with Graph API.</p>
+                        <p class="node-description">Read emails from Microsoft Outlook/Exchange. Filter, search, and
+                            extract email data with Graph API.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Filters, folder path<br>
@@ -505,7 +546,8 @@
                                 <span class="node-type">EMAIL</span>
                             </div>
                         </div>
-                        <p class="node-description">Send emails via Outlook/Exchange. Full Microsoft Graph API support with templates and attachments.</p>
+                        <p class="node-description">Send emails via Outlook/Exchange. Full Microsoft Graph API support
+                            with templates and attachments.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Recipients, content, attachments<br>
@@ -528,7 +570,8 @@
                                 <span class="node-type">SOCIAL</span>
                             </div>
                         </div>
-                        <p class="node-description">Post tweets to Twitter/X. Supports media attachments, threading, and scheduling with Twitter API v2.</p>
+                        <p class="node-description">Post tweets to Twitter/X. Supports media attachments, threading, and
+                            scheduling with Twitter API v2.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Tweet text, media, thread<br>
@@ -548,7 +591,8 @@
                                 <span class="node-type">SOCIAL</span>
                             </div>
                         </div>
-                        <p class="node-description">Read tweets from timeline, mentions, or search. Monitor brand, competitors, or trending topics.</p>
+                        <p class="node-description">Read tweets from timeline, mentions, or search. Monitor brand,
+                            competitors, or trending topics.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Search query, filters<br>
@@ -568,7 +612,8 @@
                                 <span class="node-type">SOCIAL</span>
                             </div>
                         </div>
-                        <p class="node-description">Post content to LinkedIn. Share articles, images, and updates to personal profiles or company pages.</p>
+                        <p class="node-description">Post content to LinkedIn. Share articles, images, and updates to
+                            personal profiles or company pages.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Content, media, visibility<br>
@@ -588,7 +633,8 @@
                                 <span class="node-type">SOCIAL</span>
                             </div>
                         </div>
-                        <p class="node-description">Post to Facebook pages or groups. Schedule posts, add media, and track engagement with Graph API.</p>
+                        <p class="node-description">Post to Facebook pages or groups. Schedule posts, add media, and
+                            track engagement with Graph API.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Post content, media, targeting<br>
@@ -608,7 +654,8 @@
                                 <span class="node-type">SOCIAL</span>
                             </div>
                         </div>
-                        <p class="node-description">Post photos and videos to Instagram. Supports stories, reels, and carousel posts via Instagram API.</p>
+                        <p class="node-description">Post photos and videos to Instagram. Supports stories, reels, and
+                            carousel posts via Instagram API.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Media, caption, hashtags<br>
@@ -631,7 +678,8 @@
                                 <span class="node-type">WEB</span>
                             </div>
                         </div>
-                        <p class="node-description">Crawl and extract content from websites. Follow links, respect robots.txt, handle pagination automatically.</p>
+                        <p class="node-description">Crawl and extract content from websites. Follow links, respect
+                            robots.txt, handle pagination automatically.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Start URL, depth, selectors<br>
@@ -651,7 +699,8 @@
                                 <span class="node-type">WEB</span>
                             </div>
                         </div>
-                        <p class="node-description">Parse HTML documents and extract structured data. CSS selectors, XPath, and regex support.</p>
+                        <p class="node-description">Parse HTML documents and extract structured data. CSS selectors,
+                            XPath, and regex support.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> HTML content, selectors<br>
@@ -671,7 +720,8 @@
                                 <span class="node-type">WEB</span>
                             </div>
                         </div>
-                        <p class="node-description">Make HTTP API requests. Full REST API support with authentication, headers, and response parsing.</p>
+                        <p class="node-description">Make HTTP API requests. Full REST API support with authentication,
+                            headers, and response parsing.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> URL, method, headers, body<br>
@@ -694,7 +744,8 @@
                                 <span class="node-type">PROCESS</span>
                             </div>
                         </div>
-                        <p class="node-description">Parse and transform JSON data. Extract fields, validate structure, convert formats.</p>
+                        <p class="node-description">Parse and transform JSON data. Extract fields, validate structure,
+                            convert formats.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> JSON string or object<br>
@@ -714,7 +765,8 @@
                                 <span class="node-type">PROCESS</span>
                             </div>
                         </div>
-                        <p class="node-description">Parse CSV files into structured data. Handle different delimiters, headers, and encoding.</p>
+                        <p class="node-description">Parse CSV files into structured data. Handle different delimiters,
+                            headers, and encoding.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> CSV content, options<br>
@@ -734,7 +786,8 @@
                                 <span class="node-type">PROCESS</span>
                             </div>
                         </div>
-                        <p class="node-description">Parse XML documents. XPath queries, namespace handling, and conversion to JSON.</p>
+                        <p class="node-description">Parse XML documents. XPath queries, namespace handling, and
+                            conversion to JSON.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> XML content, XPath<br>
@@ -754,7 +807,8 @@
                                 <span class="node-type">PROCESS</span>
                             </div>
                         </div>
-                        <p class="node-description">Filter datasets by criteria. Complex conditions, multiple filters, and logical operators.</p>
+                        <p class="node-description">Filter datasets by criteria. Complex conditions, multiple filters,
+                            and logical operators.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Data array, filter rules<br>
@@ -774,7 +828,8 @@
                                 <span class="node-type">PROCESS</span>
                             </div>
                         </div>
-                        <p class="node-description">Transform data structures. Map, reduce, reshape, and convert between formats.</p>
+                        <p class="node-description">Transform data structures. Map, reduce, reshape, and convert between
+                            formats.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Data, transformation rules<br>
@@ -794,7 +849,8 @@
                                 <span class="node-type">PROCESS</span>
                             </div>
                         </div>
-                        <p class="node-description">Combine multiple data sources. Join, union, and aggregate data from different inputs.</p>
+                        <p class="node-description">Combine multiple data sources. Join, union, and aggregate data from
+                            different inputs.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Multiple data sources<br>
@@ -814,7 +870,8 @@
                                 <span class="node-type">PROCESS</span>
                             </div>
                         </div>
-                        <p class="node-description">Advanced PDF operations. Extract text, images, metadata. Convert, split, merge PDFs.</p>
+                        <p class="node-description">Advanced PDF operations. Extract text, images, metadata. Convert,
+                            split, merge PDFs.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> PDF file<br>
@@ -834,7 +891,8 @@
                                 <span class="node-type">PROCESS</span>
                             </div>
                         </div>
-                        <p class="node-description">Process Excel files. Read/write .xls and .xlsx, handle formulas, multiple sheets, formatting.</p>
+                        <p class="node-description">Process Excel files. Read/write .xls and .xlsx, handle formulas,
+                            multiple sheets, formatting.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Excel file<br>
@@ -854,7 +912,8 @@
                                 <span class="node-type">PROCESS</span>
                             </div>
                         </div>
-                        <p class="node-description">Process Word documents. Extract text, images, tables from .doc and .docx files.</p>
+                        <p class="node-description">Process Word documents. Extract text, images, tables from .doc and
+                            .docx files.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Word document<br>
@@ -874,7 +933,8 @@
                                 <span class="node-type">PROCESS</span>
                             </div>
                         </div>
-                        <p class="node-description">Process and manipulate images. Resize, crop, convert formats, apply filters, extract metadata.</p>
+                        <p class="node-description">Process and manipulate images. Resize, crop, convert formats, apply
+                            filters, extract metadata.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Image file, operations<br>
@@ -894,7 +954,8 @@
                                 <span class="node-type">PROCESS</span>
                             </div>
                         </div>
-                        <p class="node-description">Compress and decompress files. Support for ZIP, GZIP, and other compression formats.</p>
+                        <p class="node-description">Compress and decompress files. Support for ZIP, GZIP, and other
+                            compression formats.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Files, compression type<br>
@@ -917,7 +978,8 @@
                                 <span class="node-type">AI MODEL</span>
                             </div>
                         </div>
-                        <p class="node-description">Fast 1 billion parameter model (668 MB). Ultra-fast inference for real-time applications and chatbots.</p>
+                        <p class="node-description">Fast 1 billion parameter model (668 MB). Ultra-fast inference for
+                            real-time applications and chatbots.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Prompt, context, parameters<br>
@@ -937,7 +999,8 @@
                                 <span class="node-type">AI MODEL</span>
                             </div>
                         </div>
-                        <p class="node-description">Balanced 3 billion parameter model (2.0 GB). High quality with excellent performance for general tasks.</p>
+                        <p class="node-description">Balanced 3 billion parameter model (2.0 GB). High quality with
+                            excellent performance for general tasks.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Prompt, context, temperature<br>
@@ -957,7 +1020,8 @@
                                 <span class="node-type">AI MODEL</span>
                             </div>
                         </div>
-                        <p class="node-description">Uncensored 7B+ parameter model (4.8 GB). Maximum capability, no filters, enterprise-grade performance.</p>
+                        <p class="node-description">Uncensored 7B+ parameter model (4.8 GB). Maximum capability, no
+                            filters, enterprise-grade performance.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Prompt, full context<br>
@@ -980,7 +1044,8 @@
                                 <span class="node-type">TRANSLATE</span>
                             </div>
                         </div>
-                        <p class="node-description">Automatically detect language of input text. Supports 100+ languages with confidence scores.</p>
+                        <p class="node-description">Automatically detect language of input text. Supports 100+ languages
+                            with confidence scores.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Text content<br>
@@ -1000,7 +1065,8 @@
                                 <span class="node-type">TRANSLATE</span>
                             </div>
                         </div>
-                        <p class="node-description">Translate text between languages. High-quality neural translation with context preservation.</p>
+                        <p class="node-description">Translate text between languages. High-quality neural translation
+                            with context preservation.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Text, source lang, target lang<br>
@@ -1020,7 +1086,8 @@
                                 <span class="node-type">TRANSLATE</span>
                             </div>
                         </div>
-                        <p class="node-description">Translate to multiple languages simultaneously. Batch translation for efficiency.</p>
+                        <p class="node-description">Translate to multiple languages simultaneously. Batch translation
+                            for efficiency.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Text, target languages<br>
@@ -1043,7 +1110,8 @@
                                 <span class="node-type">NOTIFY</span>
                             </div>
                         </div>
-                        <p class="node-description">Send notifications to Slack. Channel messages, DMs, rich formatting, and attachments.</p>
+                        <p class="node-description">Send notifications to Slack. Channel messages, DMs, rich formatting,
+                            and attachments.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Channel, message, attachments<br>
@@ -1063,7 +1131,8 @@
                                 <span class="node-type">NOTIFY</span>
                             </div>
                         </div>
-                        <p class="node-description">Send messages to Discord. Webhooks, embeds, and rich media support.</p>
+                        <p class="node-description">Send messages to Discord. Webhooks, embeds, and rich media support.
+                        </p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Webhook URL, content, embeds<br>
@@ -1083,7 +1152,8 @@
                                 <span class="node-type">NOTIFY</span>
                             </div>
                         </div>
-                        <p class="node-description">Send SMS text messages. Twilio integration for critical alerts and notifications.</p>
+                        <p class="node-description">Send SMS text messages. Twilio integration for critical alerts and
+                            notifications.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Phone number, message<br>
@@ -1106,7 +1176,8 @@
                                 <span class="node-type">DATABASE</span>
                             </div>
                         </div>
-                        <p class="node-description">Query databases. Support for SQL (MySQL, PostgreSQL, SQL Server) and NoSQL (MongoDB). Parameterized queries for security.</p>
+                        <p class="node-description">Query databases. Support for SQL (MySQL, PostgreSQL, SQL Server) and
+                            NoSQL (MongoDB). Parameterized queries for security.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Connection, query, parameters<br>
@@ -1126,7 +1197,8 @@
                                 <span class="node-type">DATABASE</span>
                             </div>
                         </div>
-                        <p class="node-description">Insert data into databases. Bulk inserts, transactions, and automatic schema mapping.</p>
+                        <p class="node-description">Insert data into databases. Bulk inserts, transactions, and
+                            automatic schema mapping.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Connection, table, data<br>
@@ -1149,7 +1221,8 @@
                                 <span class="node-type">LOGIC</span>
                             </div>
                         </div>
-                        <p class="node-description">Conditional branching. If/else logic with complex conditions and multiple branches.</p>
+                        <p class="node-description">Conditional branching. If/else logic with complex conditions and
+                            multiple branches.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Data, condition rules<br>
@@ -1169,7 +1242,8 @@
                                 <span class="node-type">LOGIC</span>
                             </div>
                         </div>
-                        <p class="node-description">Repeat operations. For-each, while, and do-until loops with break conditions.</p>
+                        <p class="node-description">Repeat operations. For-each, while, and do-until loops with break
+                            conditions.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Data array, iteration logic<br>
@@ -1189,7 +1263,8 @@
                                 <span class="node-type">LOGIC</span>
                             </div>
                         </div>
-                        <p class="node-description">Add time delays. Wait for specific duration or until a condition is met.</p>
+                        <p class="node-description">Add time delays. Wait for specific duration or until a condition is
+                            met.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Duration, unit (ms/s/m/h)<br>
@@ -1212,7 +1287,8 @@
                                 <span class="node-type">OUTPUT</span>
                             </div>
                         </div>
-                        <p class="node-description">Display results in the UI. Format, visualize, and present workflow outputs.</p>
+                        <p class="node-description">Display results in the UI. Format, visualize, and present workflow
+                            outputs.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Data to display<br>
@@ -1232,7 +1308,8 @@
                                 <span class="node-type">OUTPUT</span>
                             </div>
                         </div>
-                        <p class="node-description">Save output to file. Local filesystem, cloud storage, or download to user's computer.</p>
+                        <p class="node-description">Save output to file. Local filesystem, cloud storage, or download to
+                            user's computer.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Data, filename, format<br>
@@ -1252,7 +1329,8 @@
                                 <span class="node-type">OUTPUT</span>
                             </div>
                         </div>
-                        <p class="node-description">Return HTTP response. For webhook workflows, send data back to the caller.</p>
+                        <p class="node-description">Return HTTP response. For webhook workflows, send data back to the
+                            caller.</p>
                         <div class="node-ports">
                             <div class="port-info">
                                 <strong>Inputs:</strong> Status code, body, headers<br>
@@ -1269,10 +1347,10 @@
     </section>
 
     <!-- How to Use -->
-    <section class="how-to-use">
+    <section class="how-to-use" id="how-to-use">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Tutorial</span>
+
                 <h2>How to Build Workflows</h2>
                 <p>Simple 4-step process to create powerful automation</p>
             </div>
@@ -1282,28 +1360,32 @@
                     <div class="step-number">1</div>
                     <div class="step-icon"><i class="fas fa-mouse-pointer"></i></div>
                     <h3>Drag & Drop Nodes</h3>
-                    <p>Select nodes from the library and drag them onto the canvas. Each node represents a specific operation or integration.</p>
+                    <p>Select nodes from the library and drag them onto the canvas. Each node represents a specific
+                        operation or integration.</p>
                 </div>
 
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <div class="step-icon"><i class="fas fa-sliders-h"></i></div>
                     <h3>Configure Settings</h3>
-                    <p>Double-click nodes to configure their settings. Add API keys, define filters, set parameters, and customize behavior.</p>
+                    <p>Double-click nodes to configure their settings. Add API keys, define filters, set parameters, and
+                        customize behavior.</p>
                 </div>
 
                 <div class="step-card">
                     <div class="step-number">3</div>
                     <div class="step-icon"><i class="fas fa-project-diagram"></i></div>
                     <h3>Connect Nodes</h3>
-                    <p>Click ports to create connections between nodes. Data flows from one node to the next through these connections.</p>
+                    <p>Click ports to create connections between nodes. Data flows from one node to the next through
+                        these connections.</p>
                 </div>
 
                 <div class="step-card">
                     <div class="step-number">4</div>
                     <div class="step-icon"><i class="fas fa-play-circle"></i></div>
                     <h3>Execute & Monitor</h3>
-                    <p>Click Execute to run your workflow. Monitor progress in real-time and see results as each node completes.</p>
+                    <p>Click Execute to run your workflow. Monitor progress in real-time and see results as each node
+                        completes.</p>
                 </div>
             </div>
         </div>
@@ -1323,12 +1405,34 @@
         </div>
     </section>
 
+
+    <!-- Floating Chat Button -->
+    <div id="chatbot-toggle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="chatbot-overlay">
+        <div id="chatbot-modal">
+            <button id="chatbot-close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <iframe src="./chatbot.html" frameborder="0" id="chatbot-iframe"></iframe>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="./chatboat-widget.css">
+    <script src="./chatboat-widget.js"></script>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="./superchat_logo_4.png" alt="SuperChat" class="footer-logo">
+                    <img src="./assests/superchatB.png" alt="SuperChat" class="footer-logo">
                     <p class="footer-tagline">Enterprise AI Solutions</p>
                     <p>Powerful on-premise AI models for businesses that value privacy and control.</p>
                 </div>
@@ -1363,14 +1467,25 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 SuperChat LLC. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Security</a>
+                    <a href="#" data-modal="privacy">Privacy Policy</a>
+                    <a href="#" data-modal="terms">Terms of Service</a>
+                    <a href="#" data-modal="security">Security</a>
                 </div>
             </div>
+
+            <!-- Reusable Modal -->
+            <div class="modal-overlay" id="infoModal">
+                <div class="modal">
+                    <button class="modal-close">&times;</button>
+                    <h2 id="modalTitle"></h2>
+                    <div id="modalContent"></div>
+                </div>
+            </div>
+
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
