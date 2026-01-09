@@ -84,83 +84,83 @@ if (categoryTabs) {
     });
 }
 
-// ===================================
-// Contact Form Validation & Submission
-// ===================================
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+// // ===================================
+// // Contact Form Validation & Submission
+// // ===================================
+// const contactForm = document.getElementById('contactForm');
+// if (contactForm) {
+//     contactForm.addEventListener('submit', function(e) {
+//         e.preventDefault();
         
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData.entries());
+//         // Get form data
+//         const formData = new FormData(contactForm);
+//         const data = Object.fromEntries(formData.entries());
         
-        // Basic validation
-        let isValid = true;
-        let errors = [];
+//         // Basic validation
+//         let isValid = true;
+//         let errors = [];
         
-        // Validate required fields
-        if (!data.firstName || data.firstName.trim() === '') {
-            errors.push('First name is required');
-            isValid = false;
-        }
+//         // Validate required fields
+//         if (!data.firstName || data.firstName.trim() === '') {
+//             errors.push('First name is required');
+//             isValid = false;
+//         }
         
-        if (!data.lastName || data.lastName.trim() === '') {
-            errors.push('Last name is required');
-            isValid = false;
-        }
+//         if (!data.lastName || data.lastName.trim() === '') {
+//             errors.push('Last name is required');
+//             isValid = false;
+//         }
         
-        if (!data.email || !isValidEmail(data.email)) {
-            errors.push('Valid email address is required');
-            isValid = false;
-        }
+//         if (!data.email || !isValidEmail(data.email)) {
+//             errors.push('Valid email address is required');
+//             isValid = false;
+//         }
         
-        if (!data.company || data.company.trim() === '') {
-            errors.push('Company name is required');
-            isValid = false;
-        }
+//         if (!data.company || data.company.trim() === '') {
+//             errors.push('Company name is required');
+//             isValid = false;
+//         }
         
-        if (!data.inquiryType || data.inquiryType === '') {
-            errors.push('Please select an inquiry type');
-            isValid = false;
-        }
+//         if (!data.inquiryType || data.inquiryType === '') {
+//             errors.push('Please select an inquiry type');
+//             isValid = false;
+//         }
         
-        if (!data.message || data.message.trim() === '') {
-            errors.push('Message is required');
-            isValid = false;
-        }
+//         if (!data.message || data.message.trim() === '') {
+//             errors.push('Message is required');
+//             isValid = false;
+//         }
         
-        if (!data.terms) {
-            errors.push('You must agree to the terms and privacy policy');
-            isValid = false;
-        }
+//         if (!data.terms) {
+//             errors.push('You must agree to the terms and privacy policy');
+//             isValid = false;
+//         }
         
-        const formMessage = document.getElementById('formMessage');
+//         const formMessage = document.getElementById('formMessage');
         
-        if (!isValid) {
-            // Show errors
-            showFormMessage(formMessage, errors.join('<br>'), 'error');
-            return;
-        }
+//         if (!isValid) {
+//             // Show errors
+//             showFormMessage(formMessage, errors.join('<br>'), 'error');
+//             return;
+//         }
         
-        // Simulate form submission (in production, send to server)
-        showFormMessage(formMessage, 'Sending...', 'info');
+//         // Simulate form submission (in production, send to server)
+//         showFormMessage(formMessage, 'Sending...', 'info');
         
-        setTimeout(() => {
-            // Success message
-            showFormMessage(formMessage, 
-                'Thank you for contacting us! We\'ll get back to you within 24 hours.', 
-                'success');
+//         setTimeout(() => {
+//             // Success message
+//             showFormMessage(formMessage, 
+//                 'Thank you for contacting us! We\'ll get back to you within 24 hours.', 
+//                 'success');
             
-            // Reset form
-            contactForm.reset();
+//             // Reset form
+//             contactForm.reset();
             
-            // Scroll to message
-            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 1500);
-    });
-}
+//             // Scroll to message
+//             formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+//         }, 1500);
+//     });
+// }
 
 // Email validation helper
 function isValidEmail(email) {
